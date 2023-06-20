@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-6">
-        <h2 class="text-center">Sign Up For Student</h2>
+        <h2 class="text-center"><b>Student Registration </b></h2>
         <form [formGroup]="signupformstudent">
           <div class="form-group">
             <svg
@@ -216,64 +216,6 @@
           >
             Date of Admission is Required</small
           >
-
-          <!-- Marks -->
-          <!-- <div class="form-group">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 448 512"
-              > -->
-          <!-- SVG Path for Marks Percentage -->
-          <!-- </svg>
-              <label for="marks">Marks :</label>
-              <input
-                type="number"
-                class="form-control"
-                id="marks"
-                placeholder="Enter Marks"
-                formControlName="marks"
-              />
-            </div>
-  
-            <small
-              *ngIf="
-                signupform.controls['marks'].dirty &&
-                signupform.hasError('required', 'marks')
-              "
-              class="text-danger"
-            >
-              Marks is Required
-            </small> -->
-
-          <!--  Percentage -->
-          <!-- <div class="form-group">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 448 512"
-              > -->
-          <!-- SVG Path for Marks Percentage -->
-          <!-- </svg>
-              <label for="Percentage"> Percentage:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="percentage"
-                placeholder="Enter Percentage"
-                formControlName="percentage"
-              />
-            </div>
-  
-            <small
-              *ngIf="
-                signupform.controls['percentage'].dirty &&
-                signupform.hasError('required', 'percentage')
-              "
-              class="text-danger"
-            >
-              percentage is Required
-            </small> -->
 
           <button
             [disabled]="signupformstudent.invalid"
