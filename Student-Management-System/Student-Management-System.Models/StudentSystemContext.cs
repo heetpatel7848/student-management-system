@@ -15,5 +15,7 @@ namespace Student_Management_System.Models
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<RToken> RTokens { get; set; }
     }
 }

@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Student-Management-System\Student-Management-System.Models\Student-Management-System.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\GetUserDTO\" />
+  </ItemGroup>
+
 </Project>

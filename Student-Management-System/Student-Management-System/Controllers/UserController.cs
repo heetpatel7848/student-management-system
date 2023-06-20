@@ -28,7 +28,7 @@ namespace Student_Management_System.Controllers
 
 
 
-            var user = await _authContext.Users.FirstOrDefaultAsync(x => x.UserName == userObj.UserName && x.Password == userObj.Password);
+            var user = await _authContext.Users.FirstOrDefaultAsync(x => x.Email == userObj.Email && x.Password == userObj.Password);
             if (user == null)
                 return NotFound(new { Message = "User not found" });
 
