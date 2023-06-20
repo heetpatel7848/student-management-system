@@ -4,14 +4,79 @@
     "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\Student-Management-System.csproj": {}
   },
   "projects": {
-    "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\Student-Management-System.csproj": {
+    "F:\\Student-Management-System\\Student-Management-System.Services\\Student-Management-System.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\Student-Management-System.csproj",
-        "projectName": "Student-Management-System",
-        "projectPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\Student-Management-System.csproj",
+        "projectUniqueName": "F:\\Student-Management-System\\Student-Management-System.Services\\Student-Management-System.Services.csproj",
+        "projectName": "Student-Management-System.Services",
+        "projectPath": "F:\\Student-Management-System\\Student-Management-System.Services\\Student-Management-System.Services.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\obj\\",
+        "outputPath": "F:\\Student-Management-System\\Student-Management-System.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\Student-Management-System.Models.csproj": {
+                "projectPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\Student-Management-System.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\Student-Management-System.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\Student-Management-System.Models.csproj",
+        "projectName": "Student-Management-System.Models",
+        "projectPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\Student-Management-System.Models.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +105,114 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\Student-Management-System.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\Student-Management-System.csproj",
+        "projectName": "Student-Management-System",
+        "projectPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\Student-Management-System.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Student-Management-System\\Student-Management-System.Services\\Student-Management-System.Services.csproj": {
+                "projectPath": "F:\\Student-Management-System\\Student-Management-System.Services\\Student-Management-System.Services.csproj"
+              },
+              "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\Student-Management-System.Models.csproj": {
+                "projectPath": "F:\\Student-Management-System\\Student-Management-System\\Student-Management-System.Models\\Student-Management-System.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

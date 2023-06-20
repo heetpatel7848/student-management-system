@@ -1,0 +1,15 @@
+F:\Student-Management-System\Student-Management-System.Services\bin\Debug\net6.0\Student-Management-System.Services.deps.json
+F:\Student-Management-System\Student-Management-System.Services\bin\Debug\net6.0\Student-Management-System.Services.dll
+F:\Student-Management-System\Student-Management-System.Services\bin\Debug\net6.0\Student-Management-System.Services.pdb
+F:\Student-Management-System\Student-Management-System.Services\bin\Debug\net6.0\Student-Management-System.Models.dll
+F:\Student-Management-System\Student-Management-System.Services\bin\Debug\net6.0\Student-Management-System.Models.pdb
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.csproj.AssemblyReference.cache
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.GeneratedMSBuildEditorConfig.editorconfig
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.AssemblyInfoInputs.cache
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.AssemblyInfo.cs
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.csproj.CoreCompileInputs.cache
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.csproj.CopyComplete
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.dll
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\refint\Student-Management-System.Services.dll
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\Student-Management-System.Services.pdb
+F:\Student-Management-System\Student-Management-System.Services\obj\Debug\net6.0\ref\Student-Management-System.Services.dll

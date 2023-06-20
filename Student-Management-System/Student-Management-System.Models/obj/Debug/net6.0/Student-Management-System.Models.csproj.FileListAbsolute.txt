@@ -1,0 +1,14 @@
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\bin\Debug\net6.0\Student-Management-System.Models.deps.json
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\bin\Debug\net6.0\Student-Management-System.Models.runtimeconfig.json
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\bin\Debug\net6.0\Student-Management-System.Models.dll
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\bin\Debug\net6.0\Student-Management-System.Models.pdb
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.csproj.AssemblyReference.cache
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.GeneratedMSBuildEditorConfig.editorconfig
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.AssemblyInfoInputs.cache
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.AssemblyInfo.cs
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.csproj.CoreCompileInputs.cache
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.dll
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\refint\Student-Management-System.Models.dll
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.pdb
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\Student-Management-System.Models.genruntimeconfig.cache
+F:\Student-Management-System\Student-Management-System\Student-Management-System.Models\obj\Debug\net6.0\ref\Student-Management-System.Models.dll
