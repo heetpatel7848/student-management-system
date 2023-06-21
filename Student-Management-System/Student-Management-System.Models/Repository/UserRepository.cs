@@ -1,9 +1,4 @@
 ﻿using Student_Management_System.Models.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Student_Management_System.Models.Repository
 {
@@ -19,13 +14,19 @@ namespace Student_Management_System.Models.Repository
             _context = context;
         }
 
+       
+
         #endregion
 
         #region Methods
         public int AddUser(User user)
         {
             _context.Add(user);
-            return _context.SaveChanges();
+            user.Role = "teacher";
+            if (_context.SaveChanges() > 0)
+                return user.Id;
+            else
+                return 0;
         }
 
         public bool DeleteUser(User user)
@@ -54,6 +55,9 @@ namespace Student_Management_System.Models.Repository
             _context.Update(user);
             return _context.SaveChanges() > 0;
         }
+
+      
         #endregion
+
     }
 }

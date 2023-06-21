@@ -39,6 +39,8 @@ builder.Services.AddDbContext<StudentSystemContext>(options =>
 #region Dependency Injection
 builder.Services.AddScoped<ITeacherService,TeacherService>();
 builder.Services.AddScoped<ITeacherRepository,TeacherRepository>();
+builder.Services.AddScoped<IUserRepository,UserRepository>();
+builder.Services.AddScoped<IUserService,UserService>();
 
 #endregion
 

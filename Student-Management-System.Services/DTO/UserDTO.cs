@@ -10,7 +10,7 @@ namespace Student_Management_System.Services.DTO
     public class UserDTO
     {
         internal bool IsActive;
-        internal bool IsAdmin;
+
 
         public string? Email { get; set; }
 

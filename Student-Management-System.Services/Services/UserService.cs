@@ -22,12 +22,12 @@ namespace Student_Management_System.Services.Services
 
         }
 
-
+      
 
         #endregion
 
         #region Methods
-        public ResponseDTO AddUser(UserDTO user)
+          public ResponseDTO AddUser(UserDTO user)
         {
             throw new NotImplementedException();
         }

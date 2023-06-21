@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Student_Management_System.Models;
 using Student_Management_System.Models.Interface;
+using Student_Management_System.Models.Repository;
 using Student_Management_System.Services.DTO;
 using Student_Management_System.Services.DTO.AddDTO;
 using Student_Management_System.Services.DTO.GetDTO;
@@ -14,13 +15,15 @@ namespace Student_Management_System.Services.Services
         #region Fileds
         private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
+        private readonly IUserRepository _userRepository;
         #endregion
 
         #region Constructor
-        public TeacherService(ITeacherRepository teacherRepository, IMapper mapper)
+        public TeacherService(ITeacherRepository teacherRepository, IMapper mapper , IUserRepository userRepository)
         {
             _teacherRepository = teacherRepository;
             _mapper = mapper;
+            _userRepository = userRepository;
         }
 
 
@@ -33,15 +36,15 @@ namespace Student_Management_System.Services.Services
             var response = new ResponseDTO();
             try
             {
-                var userByEmail = _teacherRepository.GetTeacherByEmail(teacher.Email);
-                if (userByEmail != null)
-                {
-                    response.Status = 400;
-                    response.Message = "Not Created";
-                    response.Error = "Email already exists";
-                    return response;
-                }
-                teacher.IsActive = true;
+                //var userByEmail = _teacherRepository.GetTeacherByEmail(teacher.Email);
+                //if (userByEmail != null)
+                //{
+                //    response.Status = 400;
+                //    response.Message = "Not Created";
+                //    response.Error = "Email already exists";
+                //    return response;
+                //}
+
                 var userId = _teacherRepository.AddTeacher(_mapper.Map<Teacher>(teacher));
                 if (userId == 0)
                 {
@@ -51,9 +54,21 @@ namespace Student_Management_System.Services.Services
                     return response;
                 }
 
+
                 response.Status = 201;
                 response.Message = "Created";
                 response.Data = userId;
+                var user = new User()
+                {
+                    Email = teacher.Email,
+                    Password = teacher.Password,
+                };
+
+                _userRepository.AddUser(user);
+                response.Status = 201;
+                response.Message = "Created";
+                response.Data = user;
+
             }
             catch (Exception e)
             {
