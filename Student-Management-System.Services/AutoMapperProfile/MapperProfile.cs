@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using Student_Management_System.Models;
 using Student_Management_System.Services.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Student_Management_System.Services.DTO.AddDTO;
+using Student_Management_System.Services.DTO.GetDTO;
+using Student_Management_System.Services.DTO.UpdateDTO;
+
 
 namespace Student_Management_System.Services.AutoMapperProfile
 {
@@ -19,10 +18,12 @@ namespace Student_Management_System.Services.AutoMapperProfile
             CreateMap<UserDTO, User>();
             #endregion
 
-            #region Token
-            CreateMap<RToken, RTokenDTO>();
-            CreateMap<RTokenDTO, RToken>();
-            CreateMap<RTokenDTO, RToken>();
+
+
+            #region Teacher
+            CreateMap<Teacher, GetTeacherDTO>();
+            CreateMap<AddTeacherDTO, Teacher>();
+            CreateMap<UpdateTeacherDTO, Teacher>();
             #endregion
         }
     }

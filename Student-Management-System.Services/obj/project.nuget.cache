@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "utxhK3E0XYoSjNgaXFlAj+ZZtJSuLMvniRsWaBekrUuUmcJ4nGQJRHCMRdPjlmAdjYXI6AjFX8b3hhKx5dWg6w==",
+  "dgSpecHash": "7cgmtMYZcx7FE/u/UALaiqdHylXzeWCzGMkmJntq+lRWzhhu+6rdYmc3XykvtFowh4ikd34m0CaikMQcqNQXXA==",
   "success": true,
   "projectFilePath": "F:\\Student-Management-System\\Student-Management-System.Services\\Student-Management-System.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

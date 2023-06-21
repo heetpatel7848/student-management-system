@@ -1,6 +1,12 @@
+
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Student_Management_System.Models;
-using System;
+using Student_Management_System.Models.Interface;
+using Student_Management_System.Models.Repository;
+using Student_Management_System.Services.AutoMapperProfile;
+using Student_Management_System.Services.Interafce;
+using Student_Management_System.Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,11 +27,20 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddAutoMapper(typeof(MapperProfile));
+
+
+
 builder.Services.AddDbContext<StudentSystemContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SMSConnStr"));
 });
 
+#region Dependency Injection
+builder.Services.AddScoped<ITeacherService,TeacherService>();
+builder.Services.AddScoped<ITeacherRepository,TeacherRepository>();
+
+#endregion
 
 var app = builder.Build();
 

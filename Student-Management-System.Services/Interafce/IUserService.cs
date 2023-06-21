@@ -9,11 +9,11 @@ namespace Student_Management_System.Services.Interafce
 {
     public interface IUserService
     {
-        ResponseDTO GetUser();
+        //ResponseDTO GetUser();
         ResponseDTO GetUserByEmail(string email);
-        ResponseDTO GetUserById(int id);
+        //ResponseDTO GetUserById(int id);
         ResponseDTO AddUser(UserDTO user);
         ResponseDTO UpdateUser(UserDTO user);
-        ResponseDTO DeleteUser(int id);
+        //ResponseDTO DeleteUser(int id);
     }
 }

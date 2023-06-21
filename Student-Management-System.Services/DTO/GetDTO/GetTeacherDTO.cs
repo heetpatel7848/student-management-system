@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Student_Management_System.Models
+namespace Student_Management_System.Services.DTO.GetDTO
 {
-    public class Role
+    public class GetTeacherDTO
     {
         public int Id { get; set; }
-
-        public string RoleName { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
     }
 }

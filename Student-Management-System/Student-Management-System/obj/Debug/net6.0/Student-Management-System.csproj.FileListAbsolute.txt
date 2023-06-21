@@ -6,6 +6,7 @@ F:\Student-Management-System\Student-Management-System\Student-Management-System
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Student-Management-System.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Student-Management-System.pdb
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\AutoMapper.dll
+F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Azure.Core.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Azure.Identity.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Humanizer.dll

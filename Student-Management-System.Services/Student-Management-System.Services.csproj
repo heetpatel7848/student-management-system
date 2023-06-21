@@ -9,14 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Student-Management-System\Student-Management-System.Models\Student-Management-System.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DTO\GetUserDTO\" />
   </ItemGroup>
 
 </Project>

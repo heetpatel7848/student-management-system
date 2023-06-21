@@ -24,10 +24,6 @@ namespace Student_Management_System.Controllers
                 return BadRequest();
 
 
-
-
-
-
             var user = await _authContext.Users.FirstOrDefaultAsync(x => x.Email == userObj.Email && x.Password == userObj.Password);
             if (user == null)
                 return NotFound(new { Message = "User not found" });

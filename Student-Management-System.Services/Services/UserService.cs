@@ -1,29 +1,27 @@
-﻿using Student_Management_System.Models;
+﻿using AutoMapper;
+using Student_Management_System.Models;
 using Student_Management_System.Models.Interface;
 using Student_Management_System.Services.DTO;
 using Student_Management_System.Services.Interafce;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Student_Management_System.Services.Services
 {
-    public class UserService 
+    public class UserService : IUserService
     {
         #region Fields
         private readonly IUserRepository _userRepository;
-        //private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
 
         #endregion
 
         #region Constructor 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository , IMapper mapper)
         {
-            _userRepository = userRepository;            //_mapper = mapper;
+            _userRepository = userRepository;
+            _mapper = mapper;
 
         }
+
 
 
         #endregion
@@ -34,17 +32,7 @@ namespace Student_Management_System.Services.Services
             throw new NotImplementedException();
         }
 
-        public ResponseDTO DeleteUser(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ResponseDTO GetUser()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ResponseDTO GetUserById(int id)
+        public ResponseDTO GetUserByEmail(string email)
         {
             throw new NotImplementedException();
         }
@@ -53,6 +41,7 @@ namespace Student_Management_System.Services.Services
         {
             throw new NotImplementedException();
         }
+
         #endregion
     }
 }

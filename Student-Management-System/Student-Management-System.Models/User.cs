@@ -14,8 +14,6 @@ namespace Student_Management_System.Models
         [ForeignKey("roleId")]
         public string? RoleId { get; set; }
 
-        public virtual Role Role { get; set; }
-
         public  bool IsActive { get; set; }
     }
 }

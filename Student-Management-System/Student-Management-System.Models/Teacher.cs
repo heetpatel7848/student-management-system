@@ -13,6 +13,8 @@ namespace Student_Management_System.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required(ErrorMessage ="Name is Required")]
+        [MaxLength(50, ErrorMessage ="Name cannot be greater than 30 Characters")]
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -22,6 +24,9 @@ namespace Student_Management_System.Models
         [Column(TypeName = "datetime")]
         public DateTime EnrollmentDate { get; set; }
         public string Qualification { get; set; }
-        public bool IsTeacher { get; set; }
+        public int Salary { get; set; }
+        public bool IsActive { get; set; }
+        public string Role { get; set; }
+
     }
 }
