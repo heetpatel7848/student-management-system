@@ -197,16 +197,16 @@
             <input
               type="date"
               class="form-control"
-              id="ed"
+              id="enrollmentDate"
               placeholder="Enter Enrollment Date"
-              formControlName="ed"
+              formControlName="enrollmentDate"
             />
           </div>
 
           <small
             *ngIf="
-              signupform.controls['ed'].dirty &&
-              signupform.hasError('required', 'ed')
+              signupform.controls['enrollmentDate'].dirty &&
+              signupform.hasError('required', 'enrollmentDate')
             "
             class="text-danger"
           >
@@ -241,63 +241,32 @@
             Qualification is Required</small
           >
 
-          <!-- Marks -->
-          <!-- <div class="form-group">
+          <div class="form-group">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="1em"
               viewBox="0 0 448 512"
-            > -->
-          <!-- SVG Path for Marks Percentage -->
-          <!-- </svg>
-            <label for="marks">Marks :</label>
+            >
+              <!-- SVG Path for Qualification -->
+            </svg>
+            <label for="qualification">Salary :</label>
             <input
-              type="number"
+              type="text"
               class="form-control"
-              id="marks"
-              placeholder="Enter Marks"
-              formControlName="marks"
+              id="salary"
+              placeholder="Enter Salary"
+              formControlName="salary"
             />
           </div>
-
           <small
             *ngIf="
-              signupform.controls['marks'].dirty &&
-              signupform.hasError('required', 'marks')
+              signupform.controls['salary'].dirty &&
+              signupform.hasError('required', 'salary')
             "
             class="text-danger"
           >
-            Marks is Required
-          </small> -->
-
-          <!--  Percentage -->
-          <!-- <div class="form-group">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 448 512"
-            > -->
-          <!-- SVG Path for Marks Percentage -->
-          <!-- </svg>
-            <label for="Percentage"> Percentage:</label>
-            <input
-              type="number"
-              class="form-control"
-              id="percentage"
-              placeholder="Enter Percentage"
-              formControlName="percentage"
-            />
-          </div>
-
-          <small
-            *ngIf="
-              signupform.controls['percentage'].dirty &&
-              signupform.hasError('required', 'percentage')
-            "
-            class="text-danger"
+            Salary is Required</small
           >
-            percentage is Required
-          </small> -->
 
           <button
             [disabled]="signupform.invalid"

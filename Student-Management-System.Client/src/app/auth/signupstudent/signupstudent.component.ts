@@ -28,7 +28,7 @@ export class SignupstudentComponent {
   Signup() {
     if (this.signupformstudent.valid) {
       console.log(this.signupformstudent.value)
-      this.auth.Signup(this.signupformstudent.value).subscribe({
+      this.auth.signUp(this.signupformstudent.value).subscribe({
         next: (res) => {
           alert(res.message)
           this.signupformstudent.reset();

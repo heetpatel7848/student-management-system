@@ -1,20 +1,44 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { IUser } from 'src/app/Interface/IUser';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  BaseUrl: string = "https://localhost:7015"
+  BaseUrl1: string = "https://localhost:7015"
+  BaseUrl2: string = "https://localhost:7015"
+  constructor(private http: HttpClient, public router: Router) { }
+  // constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) { }
-
-  Signup(userObj: any) {
-    return this.http.post<any>(`${this.BaseUrl}register`, userObj)
-  }
+  // Signup(userObj: any) {
+  //   return this.http.post<any>(`${this.BaseUrl}register`, userObj)
+  // }
 
   loginUp(loginObj: any) {
-    return this.http.post<any>(`${this.BaseUrl}authenticate`, loginObj)
+    return this.http.post<any>(`${this.BaseUrl1}authenticate`, loginObj)
   }
+
+  // Sign-up
+  signUp(user: IUser): Observable<any> {
+    let api = `${this.BaseUrl2}/api/Teacher`;
+    return this.http.post(api, user).pipe(catchError(this.handleError));
+  }
+
+  // Error
+  handleError(error: HttpErrorResponse) {
+    let msg = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      msg = error.error.message;
+    } else {
+      // server-side error
+      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    return throwError(msg);
+  }
+
 }

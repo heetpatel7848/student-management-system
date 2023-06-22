@@ -41,6 +41,8 @@ builder.Services.AddScoped<ITeacherService,TeacherService>();
 builder.Services.AddScoped<ITeacherRepository,TeacherRepository>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IStudentRepository,StudentRepository>();
+builder.Services.AddScoped<IStudentService,StudentService>();
 
 #endregion
 

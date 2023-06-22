@@ -14,7 +14,7 @@ namespace Student_Management_System.Models.Repository
         #endregion
 
 
-        #region
+        #region Constructor
         public TeacherRepository(StudentSystemContext context)
         {
             _context = context;
@@ -22,7 +22,7 @@ namespace Student_Management_System.Models.Repository
 
         #endregion
 
-        #region Fileds
+        #region Methods
         public int AddTeacher(Teacher teacher)
         {
             _context.Add(teacher);

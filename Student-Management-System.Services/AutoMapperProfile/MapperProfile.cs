@@ -25,6 +25,14 @@ namespace Student_Management_System.Services.AutoMapperProfile
             CreateMap<AddTeacherDTO, Teacher>();
             CreateMap<UpdateTeacherDTO, Teacher>();
             #endregion
+
+            #region Student
+            CreateMap<Student, GetStudentDTO>();
+            CreateMap<AddStudentDTO, Student>();
+            CreateMap<UpdateStudentDTO, Student>();
+            #endregion
+
+
         }
     }
 }

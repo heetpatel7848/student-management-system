@@ -21,17 +21,19 @@ export class SignupComponent {
       subject: ['', Validators.required],
       password: ['', Validators.required],
       dob: ['', Validators.required],
-      ed: ['', Validators.required],
+      enrollmentDate: ['', Validators.required],
       qualification: ['', Validators.required],
+      salary: ['', Validators.required]
     })
   }
+
 
   Signup() {
     if (this.signupform.valid) {
       console.log(this.signupform.value)
-      this.auth.Signup(this.signupform.value).subscribe({
+      this.auth.signUp(this.signupform.value).subscribe({
         next: (res) => {
-          alert(res.message)
+          console.log('res--->', res)
           this.signupform.reset();
           this.router.navigate(['login']);
         },

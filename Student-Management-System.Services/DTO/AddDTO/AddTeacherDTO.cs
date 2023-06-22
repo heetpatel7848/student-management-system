@@ -28,6 +28,6 @@ namespace Student_Management_System.Services.DTO.AddDTO
         public DateTime EnrollmentDate { get; set; }
         public string Qualification { get; set; }
         public int Salary { get; set; }
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
     }
 }

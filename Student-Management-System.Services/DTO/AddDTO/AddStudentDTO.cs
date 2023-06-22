@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Student_Management_System.Models
+namespace Student_Management_System.Services.DTO.AddDTO
 {
-    public class Student
+    public class AddStudentDTO
     {
-        [Key]
-        public int Id { get; set; }
         public string Name { get; set; }
-
         public string Email { get; set; }
         public string Class { get; set; }
         public string RollNo { get; set; }
@@ -20,7 +16,7 @@ namespace Student_Management_System.Models
         public DateTime DateOfAdmission { get; set; }
         public string Password { get; set; }
         public bool IsStudent { get; set; }
-        public string Role { get; set; }
-        public bool IsActive { get; set; }
+        public string? Role { get; set; }
+        public bool? IsActive { get; set; }
     }
 }
