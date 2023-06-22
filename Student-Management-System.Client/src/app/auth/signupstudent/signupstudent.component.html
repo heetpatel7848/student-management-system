@@ -112,16 +112,16 @@
             <input
               type="email"
               class="form-control"
-              id="rollno"
+              id="rollNo"
               placeholder="Enter rollno"
-              formControlName="rollno"
+              formControlName="rollNo"
             />
           </div>
 
           <small
             *ngIf="
-              signupformstudent.controls['rollno'].dirty &&
-              signupformstudent.hasError('required', 'rollno')
+              signupformstudent.controls['rollNo'].dirty &&
+              signupformstudent.hasError('required', 'rollNo')
             "
             class="text-danger"
           >
@@ -172,16 +172,16 @@
             <input
               type="date"
               class="form-control"
-              id="dob"
+              id="dateOfBirth"
               placeholder="Enter Date of Birth"
-              formControlName="dob"
+              formControlName="dateOfBirth"
             />
           </div>
 
           <small
             *ngIf="
-              signupformstudent.controls['dob'].dirty &&
-              signupformstudent.hasError('required', 'dob')
+              signupformstudent.controls['dateOfBirth'].dirty &&
+              signupformstudent.hasError('required', 'dateOfBirth')
             "
             class="text-danger"
           >
@@ -201,16 +201,16 @@
             <input
               type="date"
               class="form-control"
-              id="doa"
+              id="dateOfAdmission"
               placeholder="Enter Enrollment Date"
-              formControlName="doa"
+              formControlName="dateOfAdmission"
             />
           </div>
 
           <small
             *ngIf="
-              signupformstudent.controls['doa'].dirty &&
-              signupformstudent.hasError('required', 'doa')
+              signupformstudent.controls['dateOfAdmission'].dirty &&
+              signupformstudent.hasError('required', 'dateOfAdmission')
             "
             class="text-danger"
           >
@@ -221,7 +221,7 @@
             [disabled]="signupformstudent.invalid"
             type="submit"
             class="btn btn-primary"
-            (click)="Signup()"
+            (click)="SignupStudent()"
           >
             Sign Up
           </button>

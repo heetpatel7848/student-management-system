@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿                                                  using AutoMapper;
 using Student_Management_System.Models;
 using Student_Management_System.Models.Interface;
 using Student_Management_System.Models.Repository;
@@ -59,6 +59,7 @@ namespace Student_Management_System.Services.Services
                 {
                     Email = student.Email,
                     Password = student.Password,
+                    Role = "student",
                 };
 
                 _userRepository.AddUser(user);

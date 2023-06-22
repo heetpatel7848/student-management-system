@@ -12,19 +12,20 @@ export class AuthService {
   BaseUrl1: string = "https://localhost:7015"
   BaseUrl2: string = "https://localhost:7015"
   constructor(private http: HttpClient, public router: Router) { }
-  // constructor(private http: HttpClient) { }
-
-  // Signup(userObj: any) {
-  //   return this.http.post<any>(`${this.BaseUrl}register`, userObj)
-  // }
 
   loginUp(loginObj: any) {
     return this.http.post<any>(`${this.BaseUrl1}authenticate`, loginObj)
   }
 
-  // Sign-up
+  // Sign-up Teacher
   signUp(user: IUser): Observable<any> {
     let api = `${this.BaseUrl2}/api/Teacher`;
+    return this.http.post(api, user).pipe(catchError(this.handleError));
+  }
+
+  //Sign-Up Student
+  SignupStudent(user: IUser): Observable<any> {
+    let api = `${this.BaseUrl2}/api/Student`;
     return this.http.post(api, user).pipe(catchError(this.handleError));
   }
 

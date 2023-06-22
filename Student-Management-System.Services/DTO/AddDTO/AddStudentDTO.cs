@@ -15,8 +15,7 @@ namespace Student_Management_System.Services.DTO.AddDTO
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfAdmission { get; set; }
         public string Password { get; set; }
-        public bool IsStudent { get; set; }
-        public string? Role { get; set; }
+        //public string? Role { get; set; }
         public bool? IsActive { get; set; }
     }
 }

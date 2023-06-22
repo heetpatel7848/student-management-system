@@ -19,16 +19,16 @@ export class SignupstudentComponent {
       class: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      dob: ['', Validators.required],
-      rollno: ['', Validators.required],
-      doa: ['', Validators.required]
+      dateOfBirth: ['', Validators.required],
+      rollNo: ['', Validators.required],
+      dateOfAdmission: ['', Validators.required]
     })
   }
 
-  Signup() {
+  SignupStudent() {
     if (this.signupformstudent.valid) {
       console.log(this.signupformstudent.value)
-      this.auth.signUp(this.signupformstudent.value).subscribe({
+      this.auth.SignupStudent(this.signupformstudent.value).subscribe({
         next: (res) => {
           alert(res.message)
           this.signupformstudent.reset();

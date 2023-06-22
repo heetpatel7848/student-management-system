@@ -22,7 +22,6 @@ namespace Student_Management_System.Models.Repository
         public int AddUser(User user)
         {
             _context.Add(user);
-            user.Role = "teacher";
             if (_context.SaveChanges() > 0)
                 return user.Id;
             else

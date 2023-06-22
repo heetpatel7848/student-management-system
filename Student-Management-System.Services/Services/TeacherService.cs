@@ -62,6 +62,7 @@ namespace Student_Management_System.Services.Services
                 {
                     Email = teacher.Email,
                     Password = teacher.Password,
+                    Role = "teacher",
                 };
 
                 _userRepository.AddUser(user);

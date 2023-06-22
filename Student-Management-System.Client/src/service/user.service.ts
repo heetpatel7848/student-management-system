@@ -14,5 +14,11 @@ export class UserService {
     })
   }
 
+  SignupStudent() {
+    this.http.post('https://localhost:7015/api/Student', Object).subscribe(res => {
+      console.log(res);
+    })
+  }
+
 
 }

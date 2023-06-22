@@ -24,26 +24,26 @@ namespace Student_Management_System.Models.Repository
         #endregion
 
         #region Methods
-        //public int AddStudent(Student student)
-        //{
-        //    _context.Add(student);
-        //    student.Role = "student";
-        //    if (_context.SaveChanges() > 0)
-        //        return student.Id;
-        //    else
-        //        return 0;
-        //}
-
         public int AddStudent(Student student)
         {
-            student.Role = "student"; // Set the role before saving changes
             _context.Add(student);
-
+            //student.Role = "student";
             if (_context.SaveChanges() > 0)
                 return student.Id;
             else
                 return 0;
         }
+
+        //public int AddStudent(Student student)
+        //{
+        //    student.Role = "student"; // Set the role before saving changes
+        //    _context.Add(student);
+
+        //    if (_context.SaveChanges() > 0)
+        //        return student.Id;
+        //    else
+        //        return 0;
+        //}
 
 
 
@@ -78,8 +78,8 @@ namespace Student_Management_System.Models.Repository
         public bool UpdateStudent(Student student)
         {
             _context.Entry(student).Property("Name").IsModified = true;
+            _context.Entry(student).Property("Email").IsModified = true;
             _context.Entry(student).Property("Class").IsModified = true;
-            _context.Entry(student).Property("RollNo").IsModified = true;
             return _context.SaveChanges() > 0;
         }
 

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Student_Management_System.Services.DTO.AddDTO;
 using Student_Management_System.Services.DTO.UpdateDTO;
 using Student_Management_System.Services.Interafce;

@@ -50,8 +50,6 @@ namespace Student_Management_System.Models.Repository
 
         }
 
-
-
         public IEnumerable<Teacher> GetTeacherPaginated(int page, int limit)
         {
             return _context.Teachers.Where(u => u.IsActive == true).Skip((page - 1) * limit).Take(limit).ToList();
