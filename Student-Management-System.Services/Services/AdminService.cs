@@ -9,18 +9,18 @@ using Student_Management_System.Services.Interafce;
 
 namespace Student_Management_System.Services.Services
 {
-    public class TeacherService : ITeacherService
+    public class AdminService : IAdminService
     {
-        #region Fileds
-        private readonly ITeacherRepository _teacherRepository;
+        #region Fields
+        private readonly IAdminRepository _adminRepository;
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
         #endregion
 
         #region Constructor
-        public TeacherService(ITeacherRepository teacherRepository, IMapper mapper , IUserRepository userRepository)
+        public AdminService(IAdminRepository adminRepository, IMapper mapper, IUserRepository userRepository)
         {
-            _teacherRepository = teacherRepository;
+            _adminRepository = adminRepository;
             _mapper = mapper;
             _userRepository = userRepository;
         }
@@ -30,21 +30,13 @@ namespace Student_Management_System.Services.Services
         #endregion
 
         #region Methods
-        public ResponseDTO AddTeacher(AddTeacherDTO teacher)
+        public ResponseDTO AddAdmin(AddAdminDTO admin)
         {
             var response = new ResponseDTO();
             try
             {
-                //var userByEmail = _teacherRepository.GetTeacherByEmail(teacher.Email);
-                //if (userByEmail != null)
-                //{
-                //    response.Status = 400;
-                //    response.Message = "Not Created";
-                //    response.Error = "Email already exists";
-                //    return response;
-                //}
 
-                var userId = _teacherRepository.AddTeacher(_mapper.Map<Teacher>(teacher));
+                var userId = _adminRepository.AddAdmin(_mapper.Map<Admin>(admin));
                 if (userId == 0)
                 {
                     response.Status = 400;
@@ -59,9 +51,9 @@ namespace Student_Management_System.Services.Services
                 response.Data = userId;
                 var user = new User()
                 {
-                    Email = teacher.Email,
-                    Password = teacher.Password,
-                    Role = "teacher",
+                    Email = admin.Email,
+                    Password = admin.Password,
+                    Role = "admin",
                 };
 
                 _userRepository.AddUser(user);
@@ -79,21 +71,21 @@ namespace Student_Management_System.Services.Services
             return response;
         }
 
-        public ResponseDTO DeleteTeacher(int id)
+        public ResponseDTO DeleteAdmin(int id)
         {
             var response = new ResponseDTO();
             try
             {
-                var teacherById = _teacherRepository.GetTeacherById(id);
-                if (teacherById  == null)
+                var adminById = _adminRepository.GetAdminById(id);
+                if (adminById == null)
                 {
                     response.Status = 404;
                     response.Message = "Not Found";
                     response.Error = "User not found";
                     return response;
                 }
-                teacherById.IsActive = false;
-                var deleteFlag = _teacherRepository.DeleteTeacher(teacherById);
+                adminById.IsActive = false;
+                var deleteFlag = _adminRepository.DeleteAdmin(adminById);
                 if (deleteFlag)
                 {
                     response.Status = 204;
@@ -115,12 +107,12 @@ namespace Student_Management_System.Services.Services
             return response;
         }
 
-        public ResponseDTO GetTeacher()
+        public ResponseDTO GetAdmin()
         {
             var response = new ResponseDTO();
             try
             {
-                var data = _mapper.Map<List<GetTeacherDTO>>(_teacherRepository.GetTeacher().ToList());
+                var data = _mapper.Map<List<GetAdminDTO>>(_adminRepository.GetAdmin().ToList());
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;
@@ -134,12 +126,12 @@ namespace Student_Management_System.Services.Services
             return response;
         }
 
-        public ResponseDTO GetTeacherById(int id)
+        public ResponseDTO GetAdminByEmail(string email)
         {
             var response = new ResponseDTO();
             try
             {
-                var user = _teacherRepository.GetTeacherById(id);
+                var user = _adminRepository.GetAdminByEmail(email);
                 if (user == null)
                 {
                     response.Status = 404;
@@ -147,7 +139,7 @@ namespace Student_Management_System.Services.Services
                     response.Error = "User not found";
                     return response;
                 }
-                var data = _mapper.Map<GetTeacherDTO>(user);
+                var data = _mapper.Map<GetAdminDTO>(user);
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;
@@ -161,31 +153,12 @@ namespace Student_Management_System.Services.Services
             return response;
         }
 
-        public ResponseDTO GetTeacherPaginated(int page, int limit)
+        public ResponseDTO GetAdminById(int id)
         {
             var response = new ResponseDTO();
             try
             {
-                var data = _mapper.Map<List<GetTeacherDTO>>(_teacherRepository.GetTeacherPaginated(page, limit).ToList());
-                response.Status = 200;
-                response.Message = "Ok";
-                response.Data = data;
-            }
-            catch (Exception e)
-            {
-                response.Status = 500;
-                response.Message = "Internal Server Error";
-                response.Error = e.Message;
-            }
-            return response;
-        }
-
-            public ResponseDTO GetTeacherByEmail(string email)
-        {
-            var response = new ResponseDTO();
-            try
-            {
-                var user = _teacherRepository.GetTeacherByEmail(email);
+                var user = _adminRepository.GetAdminById(id);
                 if (user == null)
                 {
                     response.Status = 404;
@@ -193,7 +166,7 @@ namespace Student_Management_System.Services.Services
                     response.Error = "User not found";
                     return response;
                 }
-                var data = _mapper.Map<GetTeacherDTO>(user);
+                var data = _mapper.Map<GetAdminDTO>(user);
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;
@@ -207,28 +180,47 @@ namespace Student_Management_System.Services.Services
             return response;
         }
 
-        public ResponseDTO UpdateTeacher(UpdateTeacherDTO teacher)
+        public ResponseDTO GetAdminPaginated(int page, int limit)
         {
             var response = new ResponseDTO();
             try
             {
-                var teacherById = _teacherRepository.GetTeacherById(teacher.Id);
-                if (teacherById == null)
+                var data = _mapper.Map<List<GetAdminDTO>>(_adminRepository.GetAdminPaginated(page, limit).ToList());
+                response.Status = 200;
+                response.Message = "Ok";
+                response.Data = data;
+            }
+            catch (Exception e)
+            {
+                response.Status = 500;
+                response.Message = "Internal Server Error";
+                response.Error = e.Message;
+            }
+            return response;
+        }
+
+        public ResponseDTO UpdateAdmin(UpdateAdminDTO admin)
+        {
+            var response = new ResponseDTO();
+            try
+            {
+                var adminById = _adminRepository.GetAdminById(admin.Id);
+                if (adminById == null)
                 {
                     response.Status = 404;
                     response.Message = "Not Found";
                     response.Error = "User not found";
                     return response;
                 }
-                var userByEmail = _teacherRepository.GetTeacherByEmail(teacher.Email);
-                if (userByEmail != null && userByEmail.Id != teacher.Id)
+                var userByEmail = _adminRepository.GetAdminByEmail(admin.Email);
+                if (userByEmail != null && userByEmail.Id != admin.Id)
                 {
                     response.Status = 400;
                     response.Message = "Not Updated";
                     response.Error = "Email already exists";
                     return response;
                 }
-                var updateFlag = _teacherRepository.UpdateTeacher(_mapper.Map<Teacher>(teacher));
+                var updateFlag = _adminRepository.UpdateAdmin(_mapper.Map<Admin>(admin));
                 if (updateFlag)
                 {
                     response.Status = 204;
@@ -249,7 +241,6 @@ namespace Student_Management_System.Services.Services
             }
             return response;
         }
-
         #endregion
     }
 }

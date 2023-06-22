@@ -1,17 +1,11 @@
-﻿                                                  using AutoMapper;
+﻿using AutoMapper;
 using Student_Management_System.Models;
 using Student_Management_System.Models.Interface;
-using Student_Management_System.Models.Repository;
 using Student_Management_System.Services.DTO;
 using Student_Management_System.Services.DTO.AddDTO;
 using Student_Management_System.Services.DTO.GetDTO;
 using Student_Management_System.Services.DTO.UpdateDTO;
 using Student_Management_System.Services.Interafce;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Student_Management_System.Services.Services
 {
@@ -191,7 +185,7 @@ namespace Student_Management_System.Services.Services
             var response = new ResponseDTO();
             try
             {
-                var data = _mapper.Map<List<GetTeacherDTO>>(_studentRepository.GetStudentPaginated(page, limit).ToList());
+                var data = _mapper.Map<List<GetStudentDTO>>(_studentRepository.GetStudentPaginated(page, limit).ToList());
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;

@@ -33,6 +33,12 @@ namespace Student_Management_System.Services.AutoMapperProfile
             #endregion
 
 
+            #region Admin
+            CreateMap<Admin, GetAdminDTO>();
+            CreateMap<AddAdminDTO, Admin>();
+            CreateMap<UpdateAdminDTO, Admin>();
+            #endregion
+
         }
     }
 }

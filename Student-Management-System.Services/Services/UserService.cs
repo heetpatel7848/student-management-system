@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Student_Management_System.Models;
 using Student_Management_System.Models.Interface;
 using Student_Management_System.Services.DTO;
 using Student_Management_System.Services.Interafce;

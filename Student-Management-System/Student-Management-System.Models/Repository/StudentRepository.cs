@@ -1,9 +1,4 @@
 ﻿using Student_Management_System.Models.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Student_Management_System.Models.Repository
 {
@@ -33,20 +28,6 @@ namespace Student_Management_System.Models.Repository
             else
                 return 0;
         }
-
-        //public int AddStudent(Student student)
-        //{
-        //    student.Role = "student"; // Set the role before saving changes
-        //    _context.Add(student);
-
-        //    if (_context.SaveChanges() > 0)
-        //        return student.Id;
-        //    else
-        //        return 0;
-        //}
-
-
-
 
         public bool DeleteStudent(Student student)
         {

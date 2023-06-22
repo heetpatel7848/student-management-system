@@ -1,12 +1,11 @@
 ﻿namespace Student_Management_System.Services.DTO.UpdateDTO
 {
-    public class UpdateStudentDTO
+    public class UpdateAdminDTO
     {
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Class { get; set; }
-        public string RollNo { get; set; }
+        public string Password { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }
