@@ -8,7 +8,7 @@ namespace Student_Management_System.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Class { get; set; }
-        public string RollNo { get; set; }
+        public int RollNo { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfAdmission { get; set; }
         public string Password { get; set; }

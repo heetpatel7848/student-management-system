@@ -7,6 +7,6 @@
         public string Name { get; set; }
         public string Email { get; set; }
         public string Class { get; set; }
-        public string RollNo { get; set; }
+        public int RollNo { get; set; }
     }
 }

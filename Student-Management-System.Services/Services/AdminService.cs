@@ -112,7 +112,14 @@ namespace Student_Management_System.Services.Services
             var response = new ResponseDTO();
             try
             {
-                var data = _mapper.Map<List<GetAdminDTO>>(_adminRepository.GetAdmin().ToList());
+                var admins = _adminRepository.GetAdmin().ToList();
+                var data = admins.Select(admin => new GetAdminDTO
+                {
+                    Id = admin.Id,
+                    Name = admin.Name,
+                    Email = admin.Email
+                }).ToList();
+
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;
@@ -125,6 +132,7 @@ namespace Student_Management_System.Services.Services
             }
             return response;
         }
+
 
         public ResponseDTO GetAdminByEmail(string email)
         {
@@ -209,18 +217,14 @@ namespace Student_Management_System.Services.Services
                 {
                     response.Status = 404;
                     response.Message = "Not Found";
-                    response.Error = "User not found";
+                    response.Error = "Admin not found";
                     return response;
                 }
-                var userByEmail = _adminRepository.GetAdminByEmail(admin.Email);
-                if (userByEmail != null && userByEmail.Id != admin.Id)
-                {
-                    response.Status = 400;
-                    response.Message = "Not Updated";
-                    response.Error = "Email already exists";
-                    return response;
-                }
-                var updateFlag = _adminRepository.UpdateAdmin(_mapper.Map<Admin>(admin));
+
+                adminById.Email = admin.Email;
+                adminById.Password = admin.Password;
+
+                var updateFlag = _adminRepository.UpdateAdmin(adminById);
                 if (updateFlag)
                 {
                     response.Status = 204;
@@ -230,7 +234,7 @@ namespace Student_Management_System.Services.Services
                 {
                     response.Status = 400;
                     response.Message = "Not Updated";
-                    response.Error = "Could not update user";
+                    response.Error = "Could not update admin";
                 }
             }
             catch (Exception e)
@@ -241,6 +245,7 @@ namespace Student_Management_System.Services.Services
             }
             return response;
         }
+
         #endregion
     }
 }

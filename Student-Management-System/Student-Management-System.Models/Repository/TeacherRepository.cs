@@ -53,7 +53,7 @@ namespace Student_Management_System.Models.Repository
         public bool UpdateTeacher(Teacher teacher)
         {
             _context.Entry(teacher).Property("Name").IsModified = true;
-            _context.Entry(teacher).Property("MobileNo").IsModified = true;
+            //_context.Entry(teacher).Property("MobileNo").IsModified = true;
             _context.Entry(teacher).Property("Email").IsModified = true;
             return _context.SaveChanges() > 0;
         }

@@ -57,9 +57,16 @@ namespace Student_Management_System.Models.Repository
 
         public bool UpdateAdmin(Admin admin)
         {
-            _context.Entry(admin).Property("Name").IsModified = true;
-            _context.Entry(admin).Property("Email").IsModified = true;
-            _context.Entry(admin).Property("Password").IsModified = true;
+            var adminToUpdate = _context.Admins.Find(admin.Id);
+            if (adminToUpdate == null)
+            {
+                return false;
+            }
+
+            adminToUpdate.Name = admin.Name;
+            adminToUpdate.Email = admin.Email;
+            adminToUpdate.Password = admin.Password;
+
             return _context.SaveChanges() > 0;
         }
         #endregion

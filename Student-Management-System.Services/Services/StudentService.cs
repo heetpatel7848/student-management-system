@@ -112,7 +112,17 @@ namespace Student_Management_System.Services.Services
             var response = new ResponseDTO();
             try
             {
-                var data = _mapper.Map<List<GetStudentDTO>>(_studentRepository.GetStudent().ToList());
+                var students = _studentRepository.GetStudent().ToList();
+                var data = students.Select(student => new GetStudentDTO
+                {
+                    Id = student.Id,
+                    Name = student.Name,
+                    Email = student.Email,
+                    Class = student.Class,
+                    RollNo = student.RollNo
+                    // Include other properties as needed
+                }).ToList();
+
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;
@@ -125,6 +135,7 @@ namespace Student_Management_System.Services.Services
             }
             return response;
         }
+
 
         public ResponseDTO GetStudentByEmail(string email)
         {

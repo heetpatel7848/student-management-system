@@ -120,7 +120,15 @@ namespace Student_Management_System.Services.Services
             var response = new ResponseDTO();
             try
             {
-                var data = _mapper.Map<List<GetTeacherDTO>>(_teacherRepository.GetTeacher().ToList());
+                var teachers = _teacherRepository.GetTeacher().ToList();
+                var data = teachers.Select(teacher => new GetTeacherDTO
+                {
+                    Id = teacher.Id,
+                    Name = teacher.Name,
+                    Email = teacher.Email
+                    // Include other properties as needed
+                }).ToList();
+
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;
@@ -134,20 +142,29 @@ namespace Student_Management_System.Services.Services
             return response;
         }
 
+
         public ResponseDTO GetTeacherById(int id)
         {
             var response = new ResponseDTO();
             try
             {
-                var user = _teacherRepository.GetTeacherById(id);
-                if (user == null)
+                var teacher = _teacherRepository.GetTeacherById(id);
+                if (teacher == null)
                 {
                     response.Status = 404;
                     response.Message = "Not Found";
                     response.Error = "User not found";
                     return response;
                 }
-                var data = _mapper.Map<GetTeacherDTO>(user);
+
+                var data = new GetTeacherDTO
+                {
+                    Id = teacher.Id,
+                    Name = teacher.Name,
+                    Email = teacher.Email
+                    // Include other properties as needed
+                };
+
                 response.Status = 200;
                 response.Message = "Ok";
                 response.Data = data;
@@ -160,6 +177,7 @@ namespace Student_Management_System.Services.Services
             }
             return response;
         }
+
 
         public ResponseDTO GetTeacherPaginated(int page, int limit)
         {
@@ -217,28 +235,24 @@ namespace Student_Management_System.Services.Services
                 {
                     response.Status = 404;
                     response.Message = "Not Found";
-                    response.Error = "User not found";
+                    response.Error = "Teacher not found";
                     return response;
                 }
-                var userByEmail = _teacherRepository.GetTeacherByEmail(teacher.Email);
-                if (userByEmail != null && userByEmail.Id != teacher.Id)
-                {
-                    response.Status = 400;
-                    response.Message = "Not Updated";
-                    response.Error = "Email already exists";
-                    return response;
-                }
-                var updateFlag = _teacherRepository.UpdateTeacher(_mapper.Map<Teacher>(teacher));
+
+                teacherById.Name = teacher.Name;
+                teacherById.Email = teacher.Email;
+
+                var updateFlag = _teacherRepository.UpdateTeacher(teacherById);
                 if (updateFlag)
                 {
-                    response.Status = 204;
+                    response.Status = 200;
                     response.Message = "Updated";
                 }
                 else
                 {
                     response.Status = 400;
                     response.Message = "Not Updated";
-                    response.Error = "Could not update user";
+                    response.Error = "Could not update teacher";
                 }
             }
             catch (Exception e)
@@ -249,6 +263,7 @@ namespace Student_Management_System.Services.Services
             }
             return response;
         }
+
 
         public ResponseDTO AddAttendance(AddAttendanceDTO attendance)
         {
