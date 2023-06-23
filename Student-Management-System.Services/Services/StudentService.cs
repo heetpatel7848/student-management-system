@@ -221,28 +221,26 @@ namespace Student_Management_System.Services.Services
                 {
                     response.Status = 404;
                     response.Message = "Not Found";
-                    response.Error = "User not found";
+                    response.Error = "Student not found";
                     return response;
                 }
-                var userByEmail = _studentRepository.GetStudentByEmail(student.Email);
-                if (userByEmail != null && userByEmail.Id != student.Id)
-                {
-                    response.Status = 400;
-                    response.Message = "Not Updated";
-                    response.Error = "Email already exists";
-                    return response;
-                }
-                var updateFlag = _studentRepository.UpdateStudent(_mapper.Map<Student>(student));
+
+                studentById.Name = student.Name;
+                studentById.Email = student.Email;
+                studentById.Class = student.Class;
+                studentById.RollNo = student.RollNo;
+
+                var updateFlag = _studentRepository.UpdateStudent(studentById);
                 if (updateFlag)
                 {
-                    response.Status = 204;
+                    response.Status = 200;
                     response.Message = "Updated";
                 }
                 else
                 {
                     response.Status = 400;
                     response.Message = "Not Updated";
-                    response.Error = "Could not update user";
+                    response.Error = "Could not update student";
                 }
             }
             catch (Exception e)
@@ -253,6 +251,7 @@ namespace Student_Management_System.Services.Services
             }
             return response;
         }
+
         #endregion
     }
 }

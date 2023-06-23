@@ -61,6 +61,7 @@ namespace Student_Management_System.Models.Repository
             _context.Entry(student).Property("Name").IsModified = true;
             _context.Entry(student).Property("Email").IsModified = true;
             _context.Entry(student).Property("Class").IsModified = true;
+            _context.Entry(student).Property("RollNo").IsModified = true;
             return _context.SaveChanges() > 0;
         }
 
