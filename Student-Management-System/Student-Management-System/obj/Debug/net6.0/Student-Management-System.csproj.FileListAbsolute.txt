@@ -10,6 +10,7 @@ F:\Student-Management-System\Student-Management-System\Student-Management-System
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Azure.Core.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Azure.Identity.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Humanizer.dll
+F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -93,4 +94,3 @@ F:\Student-Management-System\Student-Management-System\Student-Management-System
 F:\Student-Management-System\Student-Management-System\Student-Management-System\obj\Debug\net6.0\Student-Management-System.pdb
 F:\Student-Management-System\Student-Management-System\Student-Management-System\obj\Debug\net6.0\Student-Management-System.genruntimeconfig.cache
 F:\Student-Management-System\Student-Management-System\Student-Management-System\obj\Debug\net6.0\ref\Student-Management-System.dll
-F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

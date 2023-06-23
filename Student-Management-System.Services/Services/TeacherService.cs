@@ -15,17 +15,17 @@ namespace Student_Management_System.Services.Services
         private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
+        private readonly IAttendanceRepository _attendanceRepository;
         #endregion
 
         #region Constructor
-        public TeacherService(ITeacherRepository teacherRepository, IMapper mapper , IUserRepository userRepository)
+        public TeacherService(ITeacherRepository teacherRepository, IAttendanceRepository attendanceRepository , IMapper mapper , IUserRepository userRepository)
         {
             _teacherRepository = teacherRepository;
             _mapper = mapper;
             _userRepository = userRepository;
+            _attendanceRepository = attendanceRepository;
         }
-
-
 
         #endregion
 
@@ -247,6 +247,71 @@ namespace Student_Management_System.Services.Services
                 response.Message = "Internal Server Error";
                 response.Error = e.Message;
             }
+            return response;
+        }
+
+        public ResponseDTO AddAttendance(AddAttendanceDTO attendance)
+        {
+            var response = new ResponseDTO();
+
+            try
+            {
+                var attendanceModel = new Attendance
+                {
+                    TeacherId = attendance.TeacherId,
+                    StudentId = attendance.StudentId,
+                    Name = attendance.Name,
+                    Class = attendance.Class,
+                    Subject = attendance.Subject,
+                    IsPresent = attendance.IsPresent,
+                    IsActive = true
+                };
+
+                var attendanceId = _attendanceRepository.AddAttendance(attendanceModel);
+
+                if (attendanceId == 0)
+                {
+                    response.Status = 400;
+                    response.Message = "Not Created";
+                    response.Error = "Could not add attendance";
+                    return response;
+                }
+
+                response.Status = 201;
+                response.Message = "Created";
+                response.Data = attendanceId;
+            }
+            catch (Exception e)
+            {
+                response.Status = 500;
+                response.Message = "Internal Server Error";
+                response.Error = e.Message;
+            }
+
+            return response;
+        }
+
+
+
+        public ResponseDTO GetAttendance()
+        {
+            var response = new ResponseDTO();
+
+            try
+            {
+                var attendance = _attendanceRepository.GetAttendance();
+
+                response.Status = 200;
+                response.Message = "Success";
+                response.Data = attendance;
+            }
+            catch (Exception e)
+            {
+                response.Status = 500;
+                response.Message = "Internal Server Error";
+                response.Error = e.Message;
+            }
+
             return response;
         }
 

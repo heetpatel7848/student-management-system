@@ -52,7 +52,6 @@ export class AuthService {
       .subscribe((res: any) => {
         localStorage.setItem('access_token', JSON.stringify(res));
         console.log(res);
-        console.log()
         alert('Login successful'); // Display alert message
       });
   }
@@ -67,7 +66,7 @@ export class AuthService {
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     if (removeToken == null) {
-      this.router.navigate(['log-in']);
+      this.router.navigate(['login']);
     }
   }
   // User profile

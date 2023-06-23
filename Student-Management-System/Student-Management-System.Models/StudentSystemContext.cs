@@ -19,5 +19,6 @@ namespace Student_Management_System.Models
         public DbSet<Student> Students { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<RToken> RTokens { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace Student_Management_System.Models.Repository
         #endregion
 
 
-        #region Methods
+        #region Constructor
         public AdminRepository(StudentSystemContext context)
         {
             _context = context;
