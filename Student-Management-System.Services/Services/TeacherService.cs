@@ -264,6 +264,7 @@ namespace Student_Management_System.Services.Services
                     Class = attendance.Class,
                     Subject = attendance.Subject,
                     IsPresent = attendance.IsPresent,
+                    Date = attendance.Date,
                     IsActive = true
                 };
 
@@ -311,9 +312,50 @@ namespace Student_Management_System.Services.Services
                 response.Message = "Internal Server Error";
                 response.Error = e.Message;
             }
-
             return response;
         }
+
+        public ResponseDTO UpdateAttendance(UpdateAttendanceDTO attendanceDTO)
+        {
+            var response = new ResponseDTO();
+            try
+            {
+                var attendance = _attendanceRepository.GetAttendanceByStudentId(attendanceDTO.Id);
+                if (attendance == null)
+                {
+                    response.Status = 404;
+                    response.Message = "Not Found";
+                    response.Error = "Attendance not found";
+                    return response;
+                }
+
+                attendance.Name = attendanceDTO.Name;
+                attendance.Date = attendanceDTO.Date;
+                attendance.Subject = attendanceDTO.Subject;
+                attendance.IsPresent = attendanceDTO.IsPresent;
+
+                var updateFlag = _attendanceRepository.UpdateAttendance(attendance);
+                if (updateFlag)
+                {
+                    response.Status = 204;
+                    response.Message = "Updated";
+                }
+                else
+                {
+                    response.Status = 400;
+                    response.Message = "Not Updated";
+                    response.Error = "Could not update attendance";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Status = 500;
+                response.Message = "Internal Server Error";
+                response.Error = e.Message;
+            }
+            return response;
+        }
+
 
         #endregion
     }

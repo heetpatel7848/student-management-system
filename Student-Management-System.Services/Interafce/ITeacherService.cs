@@ -15,5 +15,6 @@ namespace Student_Management_System.Services.Interafce
         ResponseDTO DeleteTeacher(int id);
         ResponseDTO AddAttendance(AddAttendanceDTO attendance);
         ResponseDTO GetAttendance();
+        ResponseDTO UpdateAttendance(UpdateAttendanceDTO attendance);
     }
 }

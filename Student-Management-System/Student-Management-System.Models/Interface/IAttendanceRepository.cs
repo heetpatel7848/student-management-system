@@ -11,8 +11,8 @@ namespace Student_Management_System.Models.Interface
         IEnumerable<Attendance> GetAttendance();
         int AddAttendance(Attendance attendance);
         bool UpdateAttendance(Attendance attendance);
-        IEnumerable<Attendance> GetAttendanceByStudentId(int studentId);
-        IEnumerable<Attendance> GetAttendanceByTeacherId(int teacherId);
+        Attendance GetAttendanceByStudentId(int Id);
+        //IEnumerable<Attendance> GetAttendanceByTeacherId(int teacherId);
         IEnumerable<Attendance> GetAttendancePaginated(int page, int limit);
 
     }

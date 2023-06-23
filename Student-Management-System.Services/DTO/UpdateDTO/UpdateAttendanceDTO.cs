@@ -8,9 +8,9 @@ namespace Student_Management_System.Services.DTO.UpdateDTO
 {
     public class UpdateAttendanceDTO
     {
-        public int StudentId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string Class { get; set; }
+        public DateTime Date { get; set; }
         public string Subject { get; set; }
         public bool IsPresent { get; set; }
     }

@@ -13,6 +13,7 @@ namespace Student_Management_System.Services.DTO.AddDTO
         public string Name { get; set; }
         public string Class { get; set; }
         public string Subject { get; set; }
+        public DateTime Date { get; set; }
         public bool IsPresent { get; set; }
     }
 }
