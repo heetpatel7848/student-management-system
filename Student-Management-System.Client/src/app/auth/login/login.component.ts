@@ -1,6 +1,9 @@
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable, catchError, map, throwError } from 'rxjs';
+import { IUser } from 'src/app/Interface/IUser';
 import { AuthService } from 'src/service/auth.service';
 
 @Component({
@@ -9,23 +12,33 @@ import { AuthService } from 'src/service/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private auth: AuthService, private router: Router) { }
 
   loginForm !: FormGroup
+
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      role: ['', Validators.required]
     })
   }
 
-  loginUp() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value)
-      this.loginForm.reset();
-      this.router.navigate(['admin-header']);
-    }
+  // loginUp() {
+  //   if (this.loginForm.valid) {
+  //     console.log(this.loginForm.value)
+  //     this.loginForm.reset();
+  //     this.router.navigate(['admin-header']);
+  //   }
+
+  // Sign-in
+
+  loginUser() {
+    this.auth.signIn(this.loginForm.value);
+  }
+}
+
 
     // loginUp() {
     //   if (this.loginForm.valid) {
@@ -57,8 +70,3 @@ export class LoginComponent implements OnInit {
     //     }
     //   })
     // }
-
-
-
-  }
-}
