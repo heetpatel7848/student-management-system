@@ -18,6 +18,7 @@ namespace Student_Management_System.Services.DTO
 
         [ForeignKey("roleId")]
         public string? RoleId { get; set; }
+        //bool IsUserExist(LoginDTO user);
 
     }
 }

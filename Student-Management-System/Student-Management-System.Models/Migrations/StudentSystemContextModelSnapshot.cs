@@ -53,6 +53,35 @@ namespace Student_Management_System.Models.Migrations
                     b.ToTable("Admins");
                 });
 
+            modelBuilder.Entity("Student_Management_System.Models.RToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime");
+
+                    b.Property<bool>("IsStop")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("RefreshToken")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RTokens");
+                });
+
             modelBuilder.Entity("Student_Management_System.Models.Student", b =>
                 {
                     b.Property<int>("Id")
@@ -173,6 +202,17 @@ namespace Student_Management_System.Models.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Student_Management_System.Models.RToken", b =>
+                {
+                    b.HasOne("Student_Management_System.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

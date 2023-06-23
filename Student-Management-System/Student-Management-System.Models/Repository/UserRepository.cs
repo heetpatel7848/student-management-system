@@ -14,7 +14,9 @@ namespace Student_Management_System.Models.Repository
             _context = context;
         }
 
-       
+      
+
+
 
         #endregion
 
@@ -55,7 +57,14 @@ namespace Student_Management_System.Models.Repository
             return _context.SaveChanges() > 0;
         }
 
-      
+        public string AddRole(int userId)
+        {
+            var result = _context.Users.FirstOrDefault(u => u.Id == userId);
+            return result.Role;
+        }
+
+
+
         #endregion
 
     }

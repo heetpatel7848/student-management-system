@@ -16,6 +16,7 @@ namespace Student_Management_System.Services.AutoMapperProfile
             CreateMap<User, UserDTO>();
             CreateMap<UserDTO, User>();
             CreateMap<UserDTO, User>();
+            CreateMap<GetUserDTO,User>();
             #endregion
 
 
@@ -37,6 +38,10 @@ namespace Student_Management_System.Services.AutoMapperProfile
             CreateMap<Admin, GetAdminDTO>();
             CreateMap<AddAdminDTO, Admin>();
             CreateMap<UpdateAdminDTO, Admin>();
+            #endregion
+
+            #region Token
+            CreateMap<User, GetRTokenDTO>();
             #endregion
 
         }

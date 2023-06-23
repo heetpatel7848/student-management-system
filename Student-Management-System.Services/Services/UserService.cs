@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Student_Management_System.Models.Interface;
 using Student_Management_System.Services.DTO;
+using Student_Management_System.Services.DTO.GetDTO;
 using Student_Management_System.Services.Interafce;
 
 namespace Student_Management_System.Services.Services
@@ -23,10 +24,11 @@ namespace Student_Management_System.Services.Services
 
       
 
+
         #endregion
 
         #region Methods
-          public ResponseDTO AddUser(UserDTO user)
+        public ResponseDTO AddUser(UserDTO user)
         {
             throw new NotImplementedException();
         }
@@ -36,10 +38,27 @@ namespace Student_Management_System.Services.Services
             throw new NotImplementedException();
         }
 
+        public GetUserDTO IsUserExists(UserDTO user)
+        {
+            var result = _userRepository.GetUserByEmail(user.Email);
+            if(result == null || result.Password != user.Password || result.Role != user.RoleId)
+                return null;
+            return _mapper.Map<GetUserDTO>(result);
+
+        }
+
+
+        public string AddRole(int userId)
+        {
+            return _userRepository.AddRole(userId);
+        }
+
         public ResponseDTO UpdateUser(UserDTO user)
         {
             throw new NotImplementedException();
         }
+
+
 
         #endregion
     }

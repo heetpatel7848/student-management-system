@@ -15,6 +15,6 @@ namespace Student_Management_System.Models.Interface
         int AddUser (User user);
         bool UpdateUser(User user);
         bool DeleteUser(User user);
-
+        string AddRole(int userId);
     }
 }
