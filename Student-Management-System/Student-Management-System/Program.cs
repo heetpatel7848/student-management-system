@@ -81,6 +81,7 @@ builder.Services.AddScoped<IAdminRepository,AdminRepository>();
 builder.Services.AddScoped<IRTokenRepository,RTokenRepository>();
 builder.Services.AddScoped<IRTokenService,RTokenService>();
 builder.Services.AddScoped<IAttendanceRepository,AttendanceRepository>();
+builder.Services.AddScoped<IGradebookRepository,GradebookRepository>();
 
 
 #endregion

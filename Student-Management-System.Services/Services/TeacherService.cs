@@ -16,15 +16,17 @@ namespace Student_Management_System.Services.Services
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
         private readonly IAttendanceRepository _attendanceRepository;
+        private readonly IGradebookRepository _gradebookRepository;
         #endregion
 
         #region Constructor
-        public TeacherService(ITeacherRepository teacherRepository, IAttendanceRepository attendanceRepository , IMapper mapper , IUserRepository userRepository)
+        public TeacherService(IGradebookRepository gradebookRepository, ITeacherRepository teacherRepository, IAttendanceRepository attendanceRepository , IMapper mapper , IUserRepository userRepository)
         {
             _teacherRepository = teacherRepository;
             _mapper = mapper;
             _userRepository = userRepository;
             _attendanceRepository = attendanceRepository;
+            _gradebookRepository = gradebookRepository;
         }
 
         #endregion
@@ -368,6 +370,112 @@ namespace Student_Management_System.Services.Services
                 response.Message = "Internal Server Error";
                 response.Error = e.Message;
             }
+            return response;
+        }
+
+        public ResponseDTO AddGradebook(AddGradebookDTO gradebook)
+        {
+            var response = new ResponseDTO();
+
+            try
+            {
+                var gradebookModel = new Gradebook
+                {
+                    StudentName = gradebook.StudentName,
+                    Subject = gradebook.Subject,
+                    Marks = gradebook.Marks,
+                    TotalMarks = gradebook.TotalMarks,
+                    Date = gradebook.Date
+                };
+
+                var gradebookId = _gradebookRepository.AddGradebook(gradebookModel);
+
+                if (gradebookId == 0)
+                {
+                    response.Status = 400;
+                    response.Message = "Not Created";
+                    response.Error = "Could not add gradebook record";
+                    return response;
+                }
+
+                response.Status = 201;
+                response.Message = "Created";
+                response.Data = gradebookId;
+            }
+            catch (Exception e)
+            {
+                response.Status = 500;
+                response.Message = "Internal Server Error";
+                response.Error = e.Message;
+            }
+
+            return response;
+        }
+
+
+        public ResponseDTO GetGradebook()
+        {
+            var response = new ResponseDTO();
+
+            try
+            {
+                var gradebook = _gradebookRepository.GetGradebook();
+
+                response.Status = 200;
+                response.Message = "Success";
+                response.Data = gradebook;
+            }
+            catch (Exception e)
+            {
+                response.Status = 500;
+                response.Message = "Internal Server Error";
+                response.Error = e.Message;
+            }
+            return response;
+        }
+
+
+
+        public ResponseDTO UpdateGradebook(UpdateGradebookDTO gradebookDTO)
+        {
+            var response = new ResponseDTO();
+
+            try
+            {
+                var gradebook = _gradebookRepository.GetGradebookById(gradebookDTO.Id);
+
+                if (gradebook == null)
+                {
+                    response.Status = 404;
+                    response.Message = "Not Found";
+                    response.Error = "Gradebook record not found";
+                    return response;
+                }
+
+                gradebook.Marks = gradebookDTO.Marks;
+                gradebook.TotalMarks = gradebookDTO.TotalMarks;
+
+                var updateFlag = _gradebookRepository.UpdateGradebook(gradebook);
+
+                if (updateFlag)
+                {
+                    response.Status = 204;
+                    response.Message = "Updated";
+                }
+                else
+                {
+                    response.Status = 400;
+                    response.Message = "Not Updated";
+                    response.Error = "Could not update gradebook record";
+                }
+            }
+            catch (Exception e)
+            {
+                response.Status = 500;
+                response.Message = "Internal Server Error";
+                response.Error = e.Message;
+            }
+
             return response;
         }
 

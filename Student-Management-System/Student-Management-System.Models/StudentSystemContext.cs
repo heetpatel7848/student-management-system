@@ -20,5 +20,6 @@ namespace Student_Management_System.Models
         public DbSet<Admin> Admins { get; set; }
         public DbSet<RToken> RTokens { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
+        public DbSet<Gradebook> Gradebooks { get; set; }
     }
 }

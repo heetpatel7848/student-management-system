@@ -16,5 +16,9 @@ namespace Student_Management_System.Services.Interafce
         ResponseDTO AddAttendance(AddAttendanceDTO attendance);
         ResponseDTO GetAttendance();
         ResponseDTO UpdateAttendance(UpdateAttendanceDTO attendance);
+        ResponseDTO AddGradebook(AddGradebookDTO gradebook);
+        ResponseDTO GetGradebook();
+        ResponseDTO UpdateGradebook(UpdateGradebookDTO gradebook);
+
     }
 }
