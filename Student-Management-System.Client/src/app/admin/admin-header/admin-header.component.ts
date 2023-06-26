@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AdminHeaderComponent {
 
+  logout() {
+    localStorage.clear();
+    window.alert("Are you sure that you want to LOGOUT !")
+  }
 }

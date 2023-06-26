@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { StudentManagementComponent } from './student-management/student-management.component';
-import { TeacherManagementComponent } from './teacher-management/teacher-management.component';
+import { TeacherManagementComponent } from './TeacherManagement/teacher-management/teacher-management.component';
 import { AdminManagementComponent } from './admin-management/admin-management.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminComponentComponent } from './admin-component/admin-component.component';
+import { TeacherDetailComponent } from './TeacherManagement/teacher-detail/teacher-detail.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AdminComponentComponent } from './admin-component/admin-component.compo
     TeacherManagementComponent,
     AdminManagementComponent,
     AdminHeaderComponent,
-    AdminComponentComponent
+    AdminComponentComponent,
+    TeacherDetailComponent,
   ],
   imports: [
     CommonModule,

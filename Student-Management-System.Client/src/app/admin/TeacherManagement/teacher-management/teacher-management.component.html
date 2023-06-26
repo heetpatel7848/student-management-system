@@ -1,0 +1,22 @@
+<h2>Teachers List</h2>
+<table class="table-heading">
+  <tr class="rows-table">
+    <th>Name</th>
+    <th>Email</th>
+    <th>Class</th>
+  </tr>
+  <tr *ngFor="let teacher of teachers" class="rows-table">
+    <!-- <td>{{ teacher.id }}</td> -->
+    <td>{{ teacher.name }}</td>
+    <td>{{ teacher.email }}</td>
+    <td>{{ teacher.class }}</td>
+    <td>
+      <button class="viewteacher" (click)="viewTeacherDetails(teacher.id)">
+        Teacher Details
+      </button>
+      <!-- <button (click)="editTeacher(teacher.id)">Edit</button>  -->
+    </td>
+  </tr>
+</table>
+
+<button class="addteacher" (click)="addTeacher()">Add Teacher</button>

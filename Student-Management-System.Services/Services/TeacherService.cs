@@ -127,8 +127,13 @@ namespace Student_Management_System.Services.Services
                 {
                     Id = teacher.Id,
                     Name = teacher.Name,
-                    Email = teacher.Email
-                    // Include other properties as needed
+                    Email = teacher.Email,
+                    Subject = teacher.Subject,
+                    Class = teacher.Class,
+                    Qualification = teacher.Qualification,
+                    Salary = teacher.Salary,
+                    DOB = teacher.DOB,
+                    EnrollmentDate = teacher.EnrollmentDate
                 }).ToList();
 
                 response.Status = 200;
@@ -163,7 +168,13 @@ namespace Student_Management_System.Services.Services
                 {
                     Id = teacher.Id,
                     Name = teacher.Name,
-                    Email = teacher.Email
+                    Email = teacher.Email,
+                    Subject = teacher.Subject,
+                    Class = teacher.Class,
+                    Qualification = teacher.Qualification,
+                    Salary = teacher.Salary,
+                    DOB = teacher.DOB,
+                    EnrollmentDate = teacher.EnrollmentDate
                     // Include other properties as needed
                 };
 

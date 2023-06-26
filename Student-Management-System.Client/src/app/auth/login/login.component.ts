@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     if (role === 'teacher') {
       this.router.navigate(['../teacher-layout']); // Navigate to the teacher module route
     } else if (role === 'admin') {
-      this.router.navigate(['/admin']); // Navigate to the admin module route
+      this.router.navigate(['../admin-header']); // Navigate to the admin module route
     } else if (role === 'student') {
       this.router.navigate(['/student']); // Navigate to the student module route
     } else {

@@ -17,9 +17,6 @@ export class AuthService {
   constructor(private http: HttpClient, public router: Router) { }
   access_token !: any;
 
-  // loginUp(loginObj: any) {
-  //   return this.http.post<any>(`${this.BaseUrl1}authenticate`, loginObj)
-  // }
 
   // Sign-up Teacher
   signUp(user: IUser): Observable<any> {
