@@ -8,7 +8,8 @@ import { AdminManagementComponent } from './admin-management/admin-management.co
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminComponentComponent } from './admin-component/admin-component.component';
 import { TeacherDetailComponent } from './TeacherManagement/teacher-detail/teacher-detail.component';
-
+import { AddTeacherComponent } from './TeacherManagement/add-teacher/add-teacher.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,10 +19,12 @@ import { TeacherDetailComponent } from './TeacherManagement/teacher-detail/teach
     AdminHeaderComponent,
     AdminComponentComponent,
     TeacherDetailComponent,
+    AddTeacherComponent,
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
   ]
 })
 export class AdminModule { }

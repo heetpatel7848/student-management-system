@@ -1,0 +1,116 @@
+<h2>Add Teacher</h2>
+<form (ngSubmit)="onSubmit()" #teacherForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [(ngModel)]="teacher.name"
+      required
+    />
+
+    <div class="form-group">
+      <label for="class">Class:</label>
+      <input
+        type="text"
+        id="class"
+        name="class"
+        [(ngModel)]="teacher.class"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="class">Password:</label>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        [(ngModel)]="teacher.password"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject:</label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        [(ngModel)]="teacher.subject"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="qualification">Qualification:</label>
+      <input
+        type="text"
+        id="qualification"
+        name="qualification"
+        [(ngModel)]="teacher.qualification"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input
+        type="number"
+        id="salary"
+        name="salary"
+        [(ngModel)]="teacher.salary"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input
+        type="date"
+        id="dob"
+        name="dob"
+        [(ngModel)]="teacher.dob"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="enrollmentDate">Enrollment Date:</label>
+      <input
+        type="date"
+        id="enrollmentDate"
+        name="enrollmentDate"
+        [(ngModel)]="teacher.enrollmentDate"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="teacher.email"
+        required
+        email
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role:</label>
+      <input
+        type="text"
+        id="role"
+        name="role"
+        value="teacher"
+        required
+        readonly
+      />
+    </div>
+
+    <button type="submit" [disabled]="teacherForm.invalid">Submit</button>
+  </div>
+</form>
