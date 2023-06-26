@@ -1,0 +1,58 @@
+<h2>Record Attendance</h2>
+<form (ngSubmit)="submitAttendance()">
+  <div>
+    <label for="studentName">Student Name:</label>
+    <input
+      type="text"
+      id="studentName"
+      name="studentName"
+      [(ngModel)]="attendance.studentName"
+      required
+    />
+  </div>
+  <div>
+    <label for="subject">Subject:</label>
+    <select
+      id="subject"
+      name="subject"
+      [(ngModel)]="attendance.subject"
+      required
+    >
+      <option value="">Select a subject</option>
+      <option value="Maths">Maths</option>
+      <option value="English">English</option>
+      <option value="Science">Science</option>
+      <option value="Social Science">Social Science</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="date">Date:</label>
+    <input
+      type="date"
+      id="date"
+      name="date"
+      [(ngModel)]="attendance.date"
+      required
+    />
+  </div>
+  <div>
+    <label for="attendance">Attendance:</label>
+    <input
+      type="checkbox"
+      id="attendance"
+      name="attendance"
+      [(ngModel)]="attendance.attendance"
+    />
+  </div>
+  <button type="submit">Submit Attendance</button>
+</form>
+
+<h3>Submitted Attendance</h3>
+<ul>
+  <li *ngFor="let attendanceRecord of submittedAttendance">
+    Student Name: {{ attendanceRecord.studentName }} | Subject:
+    {{ attendanceRecord.subject }} | Date: {{ attendanceRecord.date | date }} |
+    Attendance: {{ attendanceRecord.attendance }}
+  </li>
+</ul>

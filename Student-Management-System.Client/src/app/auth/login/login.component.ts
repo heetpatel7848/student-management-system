@@ -36,6 +36,19 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.auth.signIn(this.loginForm.value);
+    const role = this.loginForm.value.role;
+    localStorage.setItem('role', role);
+    // Navigate to the appropriate module based on the role
+    if (role === 'teacher') {
+      this.router.navigate(['../teacher-layout']); // Navigate to the teacher module route
+    } else if (role === 'admin') {
+      this.router.navigate(['/admin']); // Navigate to the admin module route
+    } else if (role === 'student') {
+      this.router.navigate(['/student']); // Navigate to the student module route
+    } else {
+      // Handle any other role or error scenario
+      console.log('Invalid role or error occurred');
+    }
   }
 }
 
