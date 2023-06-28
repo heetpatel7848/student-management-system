@@ -1,3 +1,4 @@
+F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\appsettings.Development.json
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\appsettings.json
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Student-Management-System.exe
@@ -44,7 +45,6 @@ F:\Student-Management-System\Student-Management-System\Student-Management-System
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Mono.TextTemplating.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\System.CodeDom.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 F:\Student-Management-System\Student-Management-System\Student-Management-System\bin\Debug\net6.0\System.Drawing.Common.dll

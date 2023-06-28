@@ -1,0 +1,33 @@
+<h2>Edit Teacher</h2>
+<form (ngSubmit)="saveTeacher()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      [(ngModel)]="teacher.name"
+      name="name"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      [(ngModel)]="teacher.email"
+      name="email"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Save</button>
+    <!-- <button type="button" class="btn btn-secondary" (click)="cancelEdit()"> -->
+    <!-- Cancel -->
+    <!-- </button> -->
+  </div>
+</form>

@@ -54,15 +54,17 @@ namespace Student_Management_System.Models.Repository
             return _context.Attendances.FirstOrDefault(u => u.Id == Id  && u.IsActive == true);
         }
 
+
+
         //Attendance IAttendanceRepository.GetAttendanceById(int Id)
         //{
         //    return _context.Attendances.Where(a => a.StudentId == Id && a.IsActive == true).ToList();
         //}
 
-        //public IEnumerable<Attendance> GetAttendanceByTeacherId(int teacherId)
-        //{
-        //    return _context.Attendances.Where(a => a.TeacherId == teacherId && a.IsActive == true).ToList();
-        //}
+        public IEnumerable<Attendance> GetAttendanceByTeacherId(int teacherId)
+        {
+            return _context.Attendances.Where(a => a.TeacherId == teacherId && a.IsActive == true).ToList();
+        }
 
         public IEnumerable<Attendance> GetAttendancePaginated(int page, int limit)
         {

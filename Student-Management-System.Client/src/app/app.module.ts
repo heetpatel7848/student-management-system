@@ -22,7 +22,8 @@ import { TeacherModule } from './teacher/teacher.module';
     BrowserAnimationsModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

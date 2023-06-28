@@ -1,0 +1,54 @@
+/* styles.css */
+
+/* Style for the form container */
+
+.container {
+    width: 750px;
+    height: 500px;
+
+}
+
+.addteacher {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Style for form labels */
+.addteacher label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style for form inputs */
+.addteacher input[type="text"],
+.addteacher input[type="number"],
+.addteacher input[type="date"],
+.addteacher input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Style for the submit button */
+.addteacher .submitbtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addteacher .submitbtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.addteacher .form-group {
+    margin-bottom: 20px;
+}

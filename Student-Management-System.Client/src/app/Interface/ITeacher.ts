@@ -1,5 +1,5 @@
 export interface ITeacher {
-    id?: number
+    id: number
     name: string,
     email: string,
     class: string,
@@ -9,4 +9,10 @@ export interface ITeacher {
     dob: Date,
     enrollmentDate: Date
 
+}
+
+export interface IEditTeacher {
+    id: number,
+    name: string,
+    email: string
 }

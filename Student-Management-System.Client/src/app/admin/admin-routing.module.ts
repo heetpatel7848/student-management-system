@@ -5,6 +5,7 @@ import { AdminManagementComponent } from './admin-management/admin-management.co
 import { TeacherManagementComponent } from './TeacherManagement/teacher-management/teacher-management.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { TeacherDetailComponent } from './TeacherManagement/teacher-detail/teacher-detail.component';
+import { EditTeacherComponent } from './TeacherManagement/edit-teacher/edit-teacher.component';
 
 const routes: Routes = [
   { path: 'admin-header', component: AdminHeaderComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'student-management', component: StudentManagementComponent },
   { path: 'admin-management', component: AdminManagementComponent },
   { path: 'teacher-management', component: TeacherManagementComponent },
-  { path: 'teacher-detail/:id', component: TeacherDetailComponent }
+  { path: 'teacher-detail/:id', component: TeacherDetailComponent },
+  { path: 'edit-teacher', component: EditTeacherComponent }
 
 ];
 

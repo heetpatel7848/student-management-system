@@ -1,116 +1,294 @@
-<h2>Add Teacher</h2>
-<form (ngSubmit)="onSubmit()" #teacherForm="ngForm">
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      [(ngModel)]="teacher.name"
-      required
-    />
+<body>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <h2 class="text-center">Add Teacher</h2>
+        <form [formGroup]="addteacherform">
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </svg>
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+              formControlName="name"
+            />
+          </div>
 
-    <div class="form-group">
-      <label for="class">Class:</label>
-      <input
-        type="text"
-        id="class"
-        name="class"
-        [(ngModel)]="teacher.class"
-        required
-      />
+          <small
+            *ngIf="
+              addteacherform.controls['name'].dirty &&
+              addteacherform.hasError('required', 'name')
+            "
+            class="text-danger"
+          >
+            Name is Required</small
+          >
+
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </svg>
+            <label for="email">Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              formControlName="email"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addteacherform.controls['email'].dirty &&
+              addteacherform.hasError('required', 'lastname')
+            "
+            class="text-danger"
+          >
+            Email is Required</small
+          >
+
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </svg>
+            <label for="class">Class :</label>
+            <input
+              type="email"
+              class="form-control"
+              id="class"
+              placeholder="Enter class"
+              formControlName="class"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addteacherform.controls['class'].dirty &&
+              addteacherform.hasError('required', 'class')
+            "
+            class="text-danger"
+          >
+            Class is Required</small
+          >
+
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!-- SVG Path for Subject -->
+            </svg>
+            <label for="subject">Subject:</label>
+            <select class="form-control" id="subject" formControlName="subject">
+              <option value="">Select subject</option>
+              <option value="Maths">Maths</option>
+              <option value="English">English</option>
+              <option value="Science">Science</option>
+              <option value="Social Science">Social Science</option>
+            </select>
+          </div>
+
+          <small
+            *ngIf="
+              addteacherform.controls['subject'].dirty &&
+              addteacherform.hasError('required', 'subject')
+            "
+            class="text-danger"
+          >
+            Subject is Required</small
+          >
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M144 128v64H304V128c0-44.2-35.8-80-80-80s-80 35.8-80 80zM96 192V128C96 57.3 153.3 0 224 0s128 57.3 128 128v64h32c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H96zM48 256V448c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V256c0-8.8-7.2-16-16-16H64c-8.8 0-16 7.2-16 16z"
+              />
+            </svg>
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter password"
+              formControlName="password"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addteacherform.controls['password'].dirty &&
+              addteacherform.hasError('required', 'password')
+            "
+            class="text-danger"
+          >
+            Password is Required</small
+          >
+
+          <!-- Date of Birth -->
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!-- SVG Path for Date of Birth -->
+            </svg>
+            <label for="dob">Date of Birth:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="dob"
+              placeholder="Enter Date of Birth"
+              formControlName="dob"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addteacherform.controls['dob'].dirty &&
+              addteacherform.hasError('required', 'dob')
+            "
+            class="text-danger"
+          >
+            Date of Birth is Required</small
+          >
+
+          <!-- Enrollment Date -->
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!-- SVG Path for Date of Birth -->
+            </svg>
+            <label for="dob">Enrollment Date:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="enrollmentDate"
+              placeholder="Enter Enrollment Date"
+              formControlName="enrollmentDate"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addteacherform.controls['enrollmentDate'].dirty &&
+              addteacherform.hasError('required', 'enrollmentDate')
+            "
+            class="text-danger"
+          >
+            Enrollment Date is Required</small
+          >
+
+          <!-- Qualification -->
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!-- SVG Path for Qualification -->
+            </svg>
+            <label for="qualification">Qualification:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="qualification"
+              placeholder="Enter Qualification"
+              formControlName="qualification"
+            />
+          </div>
+          <small
+            *ngIf="
+              addteacherform.controls['qualification'].dirty &&
+              addteacherform.hasError('required', 'qualification')
+            "
+            class="text-danger"
+          >
+            Qualification is Required</small
+          >
+
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!-- SVG Path for Qualification -->
+            </svg>
+            <label for="qualification">Salary :</label>
+            <input
+              type="text"
+              class="form-control"
+              id="salary"
+              placeholder="Enter Salary"
+              formControlName="salary"
+            />
+          </div>
+          <small
+            *ngIf="
+              addteacherform.controls['salary'].dirty &&
+              addteacherform.hasError('required', 'salary')
+            "
+            class="text-danger"
+          >
+            Salary is Required</small
+          >
+
+          <div class="form-group">
+            <label for="teacherRoleInput">Role:</label>
+            <input
+              type="text"
+              id="teacherRoleInput"
+              class="form-control"
+              [value]="teacherrole.role"
+              disabled
+            />
+          </div>
+
+          <button
+            [disabled]="addteacherform.invalid"
+            type="submit"
+            class="btn btn-primary"
+            (click)="onSubmit()"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label for="class">Password:</label>
-      <input
-        type="text"
-        id="password"
-        name="password"
-        [(ngModel)]="teacher.password"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="subject">Subject:</label>
-      <input
-        type="text"
-        id="subject"
-        name="subject"
-        [(ngModel)]="teacher.subject"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="qualification">Qualification:</label>
-      <input
-        type="text"
-        id="qualification"
-        name="qualification"
-        [(ngModel)]="teacher.qualification"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="salary">Salary:</label>
-      <input
-        type="number"
-        id="salary"
-        name="salary"
-        [(ngModel)]="teacher.salary"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="dob">Date of Birth:</label>
-      <input
-        type="date"
-        id="dob"
-        name="dob"
-        [(ngModel)]="teacher.dob"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="enrollmentDate">Enrollment Date:</label>
-      <input
-        type="date"
-        id="enrollmentDate"
-        name="enrollmentDate"
-        [(ngModel)]="teacher.enrollmentDate"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        [(ngModel)]="teacher.email"
-        required
-        email
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="role">Role:</label>
-      <input
-        type="text"
-        id="role"
-        name="role"
-        value="teacher"
-        required
-        readonly
-      />
-    </div>
-
-    <button type="submit" [disabled]="teacherForm.invalid">Submit</button>
   </div>
-</form>
+</body>

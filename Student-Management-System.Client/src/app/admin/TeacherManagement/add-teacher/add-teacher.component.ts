@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/service/auth.service';
 
 @Component({
   selector: 'app-add-teacher',
@@ -10,24 +12,22 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddTeacherComponent implements OnInit {
 
-  teacherForm!: FormGroup;
-  teacher: any = {};
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router, private http: HttpClient) { }
 
-
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, public dialogRef: MatDialogRef<AddTeacherComponent>) { }
+  addteacherform !: FormGroup;
 
   ngOnInit(): void {
-    this.teacherForm = this.formBuilder.group({
+    this.addteacherform = this.fb.group({
       name: ['', Validators.required],
       class: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', Validators.required],
       subject: ['', Validators.required],
-      qualification: ['', Validators.required],
-      salary: ['', Validators.required],
+      password: ['', Validators.required],
       dob: ['', Validators.required],
       enrollmentDate: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-    });
+      qualification: ['', Validators.required],
+      salary: ['', Validators.required],
+    })
   }
 
   teacherrole: any = {
@@ -38,7 +38,9 @@ export class AddTeacherComponent implements OnInit {
   onSubmit() {
     console.log("u are on submit button")
     const url = 'https://localhost:7015/api/Teacher';
-    const formData = this.teacherForm.value;
+    const formData = this.addteacherform.value;
+    console.log(formData);
+
 
     this.http.post(url, formData).subscribe(
       (response) => {

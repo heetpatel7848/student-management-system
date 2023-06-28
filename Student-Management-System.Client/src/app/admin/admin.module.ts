@@ -10,6 +10,8 @@ import { AdminComponentComponent } from './admin-component/admin-component.compo
 import { TeacherDetailComponent } from './TeacherManagement/teacher-detail/teacher-detail.component';
 import { AddTeacherComponent } from './TeacherManagement/add-teacher/add-teacher.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditTeacherComponent } from './TeacherManagement/edit-teacher/edit-teacher.component';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdminComponentComponent,
     TeacherDetailComponent,
     AddTeacherComponent,
+    EditTeacherComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule
+
+  ],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
   ]
 })
 export class AdminModule { }

@@ -19,6 +19,8 @@ namespace Student_Management_System.Services.Interafce
         ResponseDTO AddGradebook(AddGradebookDTO gradebook);
         ResponseDTO GetGradebook();
         ResponseDTO UpdateGradebook(UpdateGradebookDTO gradebook);
+        ResponseDTO GetAttendanceByTeacherId(int id);
+        ResponseDTO GetAttendanceByStudetId(int id);
 
     }
 }
