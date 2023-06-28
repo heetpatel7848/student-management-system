@@ -1,0 +1,31 @@
+<h2>Admin Details</h2>
+
+<!-- Table -->
+<table class="admin-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Created On</th>
+      <th>Actions</th>
+      <!-- New column for buttons -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let admin of admin">
+      <td>{{ admin.name }}</td>
+      <td>{{ admin.email }}</td>
+      <td>{{ admin.createdOn }}</td>
+      <td>
+        <button class="edit-button" (click)="editAdmin(admin)">Edit</button>
+        <!-- Edit button -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Buttons -->
+<div class="button-container">
+  <button class="add-button" (click)="addAdmin()">Add Admin</button>
+  <!-- Add button -->
+</div>

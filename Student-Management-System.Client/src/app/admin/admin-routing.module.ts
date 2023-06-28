@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentManagementComponent } from './student-management/student-management.component';
-import { AdminManagementComponent } from './admin-management/admin-management.component';
+import { AdminManagementComponent } from './AdminManagement/admin-management/admin-management.component';
 import { TeacherManagementComponent } from './TeacherManagement/teacher-management/teacher-management.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { TeacherDetailComponent } from './TeacherManagement/teacher-detail/teacher-detail.component';

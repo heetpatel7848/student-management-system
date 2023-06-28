@@ -26,21 +26,24 @@ export class EditTeacherComponent implements OnInit {
 
 
   saveTeacher() {
-    console.log(this.teacher); // Assuming `id` is the property representing the teacher's ID
+    console.log(this.teacher);
+
     if (this.teacher) {
       const teacher: IEditTeacher = {
         id: this.teacher.id,
         name: this.teacher.name,
-        email: this.teacher.email
-      }
-      this.teacherService.updateTeacher(teacher).subscribe(
-        (teacher: any) => {
-          this.teacher = teacher.data;
-          console.log('update teacher', teacher);
+        email: this.teacher.email,
+      };
 
+      this.teacherService.updateTeacher(teacher).subscribe(
+        (updatedTeacher: any) => {
+          // Update the teacher data
+          this.teacher = updatedTeacher.data;
+
+          console.log('Updated teacher:', updatedTeacher);
           this.dialogRef.close();
         },
-        error => {
+        (error) => {
           console.error(error);
         }
       );

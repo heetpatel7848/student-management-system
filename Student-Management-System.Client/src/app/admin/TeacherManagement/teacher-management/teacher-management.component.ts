@@ -28,6 +28,7 @@ export class TeacherManagementComponent implements OnInit {
         this.teachers = res.data;
         console.log('the  teacher list ', res);
       },
+
       error: (error) => {
         console.log(error);
       },
@@ -39,18 +40,16 @@ export class TeacherManagementComponent implements OnInit {
     console.log("add teacher button");
     const dialogRef = this.dialog.open(AddTeacherComponent);
     dialogRef.afterClosed().subscribe(result => {
-      // Handle dialog close event
       if (result) {
         console.log('Teacher added:', result);
-        // Perform necessary actions after teacher is added
       }
     });
   }
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '500px'; // Adjust the width as per your requirement
-    dialogConfig.height = '400px'; // Adjust the height as per your requirement
+    dialogConfig.width = '500px';
+    dialogConfig.height = '400px';
     dialogConfig.position = {
       top: '500px'
     };
@@ -65,9 +64,6 @@ export class TeacherManagementComponent implements OnInit {
   }
 
   editTeacher(id: number) {
-    // Get the existing teacher details based on the ID
-
-    // Open the dialog with the existing teacher details pre-filled
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = '500px';
     dialogConfig.height = '400px';
@@ -76,16 +72,15 @@ export class TeacherManagementComponent implements OnInit {
     };
     dialogConfig.data = {
       id: id
-    }; // Pass the existing teacher details to the dialog
+    };
 
     const dialogRef = this.dialog.open(EditTeacherComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
       // Handle dialog close event
       if (result) {
         console.log('Teacher updated:', result);
-        this.teacherService.updateTeacher(result); // Update the teacher data with the result
-        this.dialogRef.close(); // C
-        // Perform necessary actions after teacher is updated
+        this.teacherService.updateTeacher(result);
+        this.dialogRef.close();
       }
     });
   }
