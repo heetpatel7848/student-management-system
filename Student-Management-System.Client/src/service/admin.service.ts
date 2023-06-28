@@ -16,4 +16,8 @@ export class AdminService {
     return this.http.get<IAdmin>(`${this.apiUrl}`);
   }
 
+  addAdmin(admin: IAdmin): Observable<IAdmin> {
+    return this.http.post<IAdmin>(`${this.apiUrl}`, admin);
+  }
+
 }

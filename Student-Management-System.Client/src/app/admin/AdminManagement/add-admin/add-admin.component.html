@@ -1,0 +1,151 @@
+<!-- <h2 class="addadminheading">Add Admin</h2>
+<div class="container">
+  <form (ngSubmit)="submitForm()" class="admin-form">
+    <div>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="admin.name"
+        required
+      />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="admin.email"
+        required
+      />
+    </div>
+    <div>
+      <label for="createdOn">Created On:</label>
+      <input
+        type="date"
+        id="createdOn"
+        name="createdOn"
+        [(ngModel)]="admin.createdOn"
+        required
+      />
+    </div>
+    <div class="button-container">
+      <button type="submit" class="add-button">Add Admin</button>
+    </div>
+  </form>
+</div> -->
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <h2 class="text-center">Add Admin</h2>
+        <form [formGroup]="addadminform">
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </svg>
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+              formControlName="name"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addadminform.controls['name'].dirty &&
+              addadminform.hasError('required', 'name')
+            "
+            class="text-danger"
+          >
+            Name is Required</small
+          >
+
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </svg>
+            <label for="email">Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              formControlName="email"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addadminform.controls['email'].dirty &&
+              addadminform.hasError('required', 'email')
+            "
+            class="text-danger"
+          >
+            Email is Required</small
+          >
+
+          <div class="form-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </svg>
+            <label for="email">CreatedOn :</label>
+            <input
+              type="date"
+              class="form-control"
+              id="createdOn"
+              placeholder="Enter createdOn"
+              formControlName="createdOn"
+            />
+          </div>
+
+          <small
+            *ngIf="
+              addadminform.controls['createdOn'].dirty &&
+              addadminform.hasError('required', 'createdOn')
+            "
+            class="text-danger"
+          >
+            Email is Required</small
+          >
+
+          <button
+            [disabled]="addadminform.invalid"
+            type="submit"
+            class="btn btn-primary"
+            (click)="onSubmit()"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

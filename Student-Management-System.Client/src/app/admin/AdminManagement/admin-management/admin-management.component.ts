@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Route, Router } from '@angular/router';
 import { IAdmin } from 'src/app/Interface/IAdmin';
 import { AdminService } from 'src/service/admin.service';
+import { AddAdminComponent } from '../add-admin/add-admin.component';
 
 @Component({
   selector: 'app-admin-management',
@@ -10,10 +12,15 @@ import { AdminService } from 'src/service/admin.service';
 })
 export class AdminManagementComponent {
 
-  public admin: IAdmin[] = [];
+  // public admin: IAdmin[] = [];
 
+  admin: any = {
+    name: '',
+    email: '',
+    createdOn: ''
+  };
 
-  constructor(private adminService: AdminService, private route: Router) { }
+  constructor(private adminService: AdminService, private route: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchAdmin();
@@ -38,6 +45,14 @@ export class AdminManagementComponent {
 
   addAdmin() {
     console.log("add admin");
+    const dialogRef = this.dialog.open(AddAdminComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // Perform necessary actions after admin is added
+    });
   }
 }
 
