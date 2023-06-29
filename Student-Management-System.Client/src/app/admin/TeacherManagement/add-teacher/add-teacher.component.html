@@ -268,7 +268,7 @@
             Salary is Required</small
           >
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="teacherRoleInput">Role:</label>
             <input
               type="text"
@@ -277,14 +277,9 @@
               [value]="teacherrole.role"
               disabled
             />
-          </div>
+          </div> -->
 
-          <button
-            [disabled]="addteacherform.invalid"
-            type="submit"
-            class="btn btn-primary"
-            (click)="onSubmit()"
-          >
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">
             Submit
           </button>
         </form>

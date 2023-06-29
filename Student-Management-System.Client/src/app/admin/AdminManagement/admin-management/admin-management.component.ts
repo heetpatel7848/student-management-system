@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Route, Router } from '@angular/router';
 import { IAdmin } from 'src/app/Interface/IAdmin';
 import { AdminService } from 'src/service/admin.service';
 import { AddAdminComponent } from '../add-admin/add-admin.component';
+import { EditAdminComponent } from '../edit-admin/edit-admin.component';
 
 @Component({
   selector: 'app-admin-management',
@@ -20,7 +21,7 @@ export class AdminManagementComponent {
     createdOn: ''
   };
 
-  constructor(private adminService: AdminService, private route: Router, private dialog: MatDialog) { }
+  constructor(private adminService: AdminService, private route: Router, private dialog: MatDialog, private dialogRef: MatDialogRef<EditAdminComponent>) { }
 
   ngOnInit(): void {
     this.fetchAdmin();
@@ -39,8 +40,28 @@ export class AdminManagementComponent {
     });
   }
 
-  editAdmin(admin: IAdmin) {
+  editAdmin(id: number) {
     console.log("edit admin");
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '500px';
+    dialogConfig.height = '400px';
+    dialogConfig.position = {
+      top: '50px'
+    };
+    dialogConfig.data = {
+      id: id
+    };
+
+    const dialogRef = this.dialog.open(EditAdminComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      // Handle dialog close event
+      if (result) {
+        console.log('Admin updated:', result);
+        this.adminService.updateAdmin(result);
+        this.dialogRef.close();
+      }
+    });
   }
 
   addAdmin() {

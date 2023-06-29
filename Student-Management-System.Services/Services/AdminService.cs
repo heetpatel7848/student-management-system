@@ -54,6 +54,7 @@ namespace Student_Management_System.Services.Services
                     Email = admin.Email,
                     Password = admin.Password,
                     Role = "admin",
+                    IsActive = true
                 };
 
                 _userRepository.AddUser(user);

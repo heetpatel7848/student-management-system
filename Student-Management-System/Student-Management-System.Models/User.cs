@@ -11,13 +11,13 @@ namespace Student_Management_System.Models
         public string Password { get; set; }
         public string? Role { get; set; }
         public  bool IsActive { get; set; }
-        public string? Class { get; set; }
-        public string? Subject { get; set; }
-        public DateTime? DOB { get; set; }
+        //public string? Class { get; set; }
+        //public string? Subject { get; set; }
+        //public DateTime? DOB { get; set; }
 
-        public DateTime? EnrollmentDate { get; set; }
-        public int? Salary { get; set; }
-        public string? Qualification { get; set; }
+        //public DateTime? EnrollmentDate { get; set; }
+        //public int? Salary { get; set; }
+        //public string? Qualification { get; set; }
 
     }
 }

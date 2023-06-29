@@ -23,8 +23,6 @@ export class EditTeacherComponent implements OnInit {
     console.log(this.teacher);
   }
 
-
-
   saveTeacher() {
     console.log(this.teacher);
 

@@ -1,0 +1,33 @@
+<h2>Student List</h2>
+
+<!-- Table -->
+<table class="student-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Class</th>
+      <th>Roll Number</th>
+      <th>Actions</th>
+      <!-- New column for buttons -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of student">
+      <td>{{ student.name }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.class }}</td>
+      <td>{{ student.rollNo }}</td>
+      <td>
+        <button class="edit-button" (click)="editStudent(student)">Edit</button>
+        <!-- Edit button -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Buttons -->
+<div class="button-container">
+  <button class="add-button" (click)="addStudent()">Add Student</button>
+  <!-- Add button -->
+</div>

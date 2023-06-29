@@ -1,0 +1,175 @@
+<body>
+  <div class="container">
+    <h2 class="text-center"><b> Add Student</b></h2>
+    <form [formGroup]="addstudentform">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter name"
+          formControlName="name"
+        />
+      </div>
+
+      <small
+        *ngIf="
+          addstudentform.controls['name'].dirty &&
+          addstudentform.hasError('required', 'name')
+        "
+        class="text-danger"
+      >
+        Name is Required</small
+      >
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="Enter email"
+          formControlName="email"
+        />
+      </div>
+
+      <small
+        *ngIf="
+          addstudentform.controls['email'].dirty &&
+          addstudentform.hasError('required', 'email')
+        "
+        class="text-danger"
+      >
+        Email is Required</small
+      >
+
+      <div class="form-group">
+        <label for="email">Class:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="class"
+          placeholder="Enter class"
+          formControlName="class"
+        />
+      </div>
+
+      <small
+        *ngIf="
+          addstudentform.controls['class'].dirty &&
+          addstudentform.hasError('required', 'class')
+        "
+        class="text-danger"
+      >
+        Class is Required</small
+      >
+
+      <div class="form-group">
+        <label for="class">Roll Number :</label>
+        <input
+          type="email"
+          class="form-control"
+          id="rollNo"
+          placeholder="Enter rollno"
+          formControlName="rollNo"
+        />
+      </div>
+
+      <small
+        *ngIf="
+          addstudentform.controls['rollNo'].dirty &&
+          addstudentform.hasError('required', 'rollNo')
+        "
+        class="text-danger"
+      >
+        Roll Number is Required</small
+      >
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter password"
+          formControlName="password"
+        />
+      </div>
+
+      <small
+        *ngIf="
+          addstudentform.controls['password'].dirty &&
+          addstudentform.hasError('required', 'password')
+        "
+        class="text-danger"
+      >
+        Password is Required</small
+      >
+
+      <!-- Date of Birth -->
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="dateOfBirth"
+          placeholder="Enter Date of Birth"
+          formControlName="dateOfBirth"
+        />
+      </div>
+
+      <small
+        *ngIf="
+          addstudentform.controls['dateOfBirth'].dirty &&
+          addstudentform.hasError('required', 'dateOfBirth')
+        "
+        class="text-danger"
+      >
+        Date of Birth is Required</small
+      >
+
+      <!-- Enrollment Date -->
+      <div class="form-group">
+        <label for="dob"> Date of Admission :</label>
+        <input
+          type="date"
+          class="form-control"
+          id="dateOfAdmission"
+          placeholder="Enter Enrollment Date"
+          formControlName="dateOfAdmission"
+        />
+      </div>
+
+      <small
+        *ngIf="
+          addstudentform.controls['dateOfAdmission'].dirty &&
+          addstudentform.hasError('required', 'dateOfAdmission')
+        "
+        class="text-danger"
+      >
+        Date of Admission is Required</small
+      >
+
+      <div class="form-group">
+        <label for="studentrole">Role:</label>
+        <input
+          type="text"
+          id="studentrole"
+          class="form-control"
+          [value]="studentrole.role"
+          disabled
+        />
+      </div>
+
+      <button
+        [disabled]="addstudentform.invalid"
+        type="submit"
+        class="btn btn-primary"
+        (click)="SignupStudent()"
+      >
+        Add Student
+      </button>
+    </form>
+  </div>
+</body>

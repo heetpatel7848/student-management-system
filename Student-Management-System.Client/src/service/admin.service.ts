@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IAdmin } from 'src/app/Interface/IAdmin';
+import { IAdmin, IEditAdmin } from 'src/app/Interface/IAdmin';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,10 @@ export class AdminService {
   addAdmin(admin: IAdmin): Observable<IAdmin> {
     return this.http.post<IAdmin>(`${this.apiUrl}`, admin);
   }
+
+  updateAdmin(admin: IEditAdmin): Observable<IAdmin> {
+    return this.http.put<IAdmin>(`${this.apiUrl}`, admin);
+  }
+
 
 }

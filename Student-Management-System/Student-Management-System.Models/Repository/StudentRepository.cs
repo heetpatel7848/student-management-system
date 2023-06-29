@@ -23,6 +23,7 @@ namespace Student_Management_System.Models.Repository
         {
             _context.Add(student);
             //student.Role = "student";
+            student.IsActive = true;
             if (_context.SaveChanges() > 0)
                 return student.Id;
             else

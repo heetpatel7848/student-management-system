@@ -24,6 +24,7 @@ namespace Student_Management_System.Models.Repository
         public int AddUser(User user)
         {
             _context.Add(user);
+            user.IsActive = true;
             if (_context.SaveChanges() > 0)
                 return user.Id;
             else

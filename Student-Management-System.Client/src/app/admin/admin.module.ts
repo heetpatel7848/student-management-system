@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { StudentManagementComponent } from './student-management/student-management.component';
 import { TeacherManagementComponent } from './TeacherManagement/teacher-management/teacher-management.component';
 import { AdminManagementComponent } from './AdminManagement/admin-management/admin-management.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
@@ -14,10 +13,12 @@ import { EditTeacherComponent } from './TeacherManagement/edit-teacher/edit-teac
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { AddAdminComponent } from './AdminManagement/add-admin/add-admin.component';
 import { EditAdminComponent } from './AdminManagement/edit-admin/edit-admin.component';
+import { StudentManagementComponent } from './StudentManagement/student-management/student-management.component';
+import { AddStudentComponent } from './StudentManagement/add-student/add-student.component';
+import { EditStudentComponent } from './StudentManagement/edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
-    StudentManagementComponent,
     TeacherManagementComponent,
     AdminManagementComponent,
     AdminHeaderComponent,
@@ -27,6 +28,9 @@ import { EditAdminComponent } from './AdminManagement/edit-admin/edit-admin.comp
     EditTeacherComponent,
     AddAdminComponent,
     EditAdminComponent,
+    StudentManagementComponent,
+    AddStudentComponent,
+    EditStudentComponent
   ],
   imports: [
     CommonModule,

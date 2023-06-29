@@ -22,21 +22,32 @@ export class AddAdminComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', Validators.required],
       createdOn: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
   onSubmit() {
-    // this.adminService.addAdmin(this.admin).subscribe(
-    //   (response) => {
-    //     console.log('Admin added:', response);
-    //     // Perform necessary actions after admin is added
-    //   },
-    //   (error) => {
-    //     console.log('Error adding admin:', error);
-    //   }
-    // );
-    console.log("u are on onsubmit btn")
-    console.log(this.addadminform.value)
+    if (this.addadminform.invalid) {
+      return;
+    }
+
+    const admin: IAdmin = {
+      name: this.addadminform.value.name,
+      email: this.addadminform.value.email,
+      createdOn: this.addadminform.value.createdOn,
+      password: this.addadminform.value.password
+    };
+
+    this.adminService.addAdmin(admin).subscribe(
+      (response) => {
+        console.log('Admin added:', response);
+        // Perform necessary actions after admin is added
+      },
+      (error) => {
+        console.log('Error adding admin:', error);
+      }
+    );
   }
+
 
 }

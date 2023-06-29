@@ -258,17 +258,8 @@ namespace Student_Management_System.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Class")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DOB")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("EnrollmentDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -277,16 +268,7 @@ namespace Student_Management_System.Models.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Qualification")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Role")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Salary")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Subject")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

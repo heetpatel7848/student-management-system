@@ -30,9 +30,9 @@ export class AddTeacherComponent implements OnInit {
     })
   }
 
-  teacherrole: any = {
-    role: 'teacher' // Add the 'role' property
-  };
+  // teacherrole: any = {
+  //   role: 'teacher' // Add the 'role' property
+  // };
 
 
   onSubmit() {

@@ -64,12 +64,13 @@ namespace Student_Management_System.Services.Services
                     Email = teacher.Email,
                     Password = teacher.Password,
                     Role = "teacher",
-                    Class = teacher.Class,
-                    Subject = teacher.Subject,
-                    DOB = teacher.DOB,
-                    EnrollmentDate = teacher.EnrollmentDate,
-                    Qualification = teacher.Qualification,
-                    Salary = teacher.Salary
+                  
+                    //Class = teacher.Class,
+                    //Subject = teacher.Subject,
+                    //DOB = teacher.DOB,
+                    //EnrollmentDate = teacher.EnrollmentDate,
+                    //Qualification = teacher.Qualification,
+                    //Salary = teacher.Salary
                 };
 
                 _userRepository.AddUser(user);
@@ -217,7 +218,7 @@ namespace Student_Management_System.Services.Services
             return response;
         }
 
-            public ResponseDTO GetTeacherByEmail(string email)
+           public ResponseDTO GetTeacherByEmail(string email)
         {
             var response = new ResponseDTO();
             try

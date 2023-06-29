@@ -1,61 +1,60 @@
-/* styles.css */
-
-/* Table Styles */
-table {
+.teacher-table {
     width: 100%;
     border-collapse: collapse;
+    font-family: Arial, sans-serif;
 }
 
-th,
-td {
-    padding: 8px;
+.teacher-table th,
+.teacher-table td {
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
 }
 
-th {
+.teacher-table th {
     background-color: #f2f2f2;
+    font-weight: bold;
 }
 
-/* Button Styles */
-.viewteacher {
-    background-color: #cab1c4;
+.teacher-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.teacher-table tr:hover {
+    background-color: #e5e5e5;
+}
+
+.teacher-table td:nth-child(2) {
+    color: #000;
+    font-size: 15px;
+}
+
+.add-button,
+.edit-button,
+.view-teacher {
+    background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 8px 16px;
     margin-right: 10px;
-}
-
-.viewteacher:hover {
-    background-color: #a57a95;
-    /* Darker background color on hover */
-}
-
-.editteacher {
-    background-color: #95ad79;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
-.editteacher:hover {
-    background-color: #71824f;
-    /* Darker background color on hover */
+.add-button {
+    background-color: #2196F3;
+    align-items: end;
 }
 
-.addteacher {
-    background-color: rgb(128, 175, 128);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+.edit-button {
+    background-color: #FFC107;
 }
 
-.addteacher:hover {
-    background-color: rgb(58, 197, 58);
-    /* Darker background color on hover */
+.view-teacher {
+    background-color: #E59866;
 }

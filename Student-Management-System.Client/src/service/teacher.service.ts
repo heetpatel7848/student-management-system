@@ -21,10 +21,11 @@ export class TeacherService {
   }
 
   addTeacher(teacher: ITeacher): Observable<ITeacher> {
-    return this.http.post<ITeacher>(`${this.baseUrl}/teachers`, teacher);
+    return this.http.post<ITeacher>(`${this.baseUrl}/api/Teacher`, teacher);
   }
 
   updateTeacher(teacher: IEditTeacher): Observable<ITeacher> {
     return this.http.put<ITeacher>(`${this.baseUrl}/api/Teacher`, teacher);
   }
+
 }
