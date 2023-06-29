@@ -1,1 +1,57 @@
-<p>edit-student works!</p>
+<h2>Edit Teacher</h2>
+<form (ngSubmit)="saveStudent()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      [(ngModel)]="student.name"
+      name="name"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      class="form-control"
+      [(ngModel)]="student.email"
+      name="email"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Class:</label>
+    <input
+      type="text"
+      id="class"
+      class="form-control"
+      [(ngModel)]="student.class"
+      name="class"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Roll No:</label>
+    <input
+      type="text"
+      id="rollNo"
+      class="form-control"
+      [(ngModel)]="student.rollNo"
+      name="rollNo"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Save</button>
+    <!-- <button type="button" class="btn btn-secondary" (click)="cancelEdit()"> -->
+    <!-- Cancel -->
+    <!-- </button> -->
+  </div>
+</form>

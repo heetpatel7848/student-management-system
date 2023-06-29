@@ -1,11 +1,17 @@
 <div *ngIf="teacher" class="details-of-teacher">
   <h2>Teacher Details</h2>
-  <p><strong>Name:</strong> {{ teacher.name }}</p>
-  <p><strong>Email:</strong> {{ teacher.email }}</p>
-  <p><strong>Class:</strong> {{ teacher.class }}</p>
-  <p><strong>Subject:</strong> {{ teacher.subject }}</p>
-  <p><strong>Qualification:</strong> {{ teacher.qualification }}</p>
-  <p><strong>Salary:</strong> {{ teacher.salary }}</p>
-  <p><strong>Date of Birth:</strong> {{ teacher.dob | date }}</p>
-  <p><strong>Enrollment Date:</strong> {{ teacher.enrollmentDate | date }}</p>
+  <div class="teacher-info">
+    <p class="name"><strong>Name:</strong> {{ teacher.name }}</p>
+    <p class="email"><strong>Email:</strong> {{ teacher.email }}</p>
+    <p class="class"><strong>Class:</strong> {{ teacher.class }}</p>
+    <p class="subject"><strong>Subject:</strong> {{ teacher.subject }}</p>
+    <p class="quali">
+      <strong>Qualification:</strong> {{ teacher.qualification }}
+    </p>
+    <p class="salary"><strong>Salary:</strong> {{ teacher.salary }}</p>
+    <p class="dob"><strong>Date of Birth:</strong> {{ teacher.dob | date }}</p>
+    <p class="enrol">
+      <strong>Enrollment Date:</strong> {{ teacher.enrollmentDate | date }}
+    </p>
+  </div>
 </div>

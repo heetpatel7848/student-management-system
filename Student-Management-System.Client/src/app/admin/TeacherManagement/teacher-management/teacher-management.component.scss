@@ -48,7 +48,8 @@
 
 .add-button {
     background-color: #2196F3;
-    align-items: end;
+    padding: 15px;
+    font-size: larger;
 }
 
 .edit-button {
@@ -57,4 +58,21 @@
 
 .view-teacher {
     background-color: #E59866;
+}
+
+.teacherheading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+
 }

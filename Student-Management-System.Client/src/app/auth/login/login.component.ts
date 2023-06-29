@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('role', role);
     // Navigate to the appropriate module based on the role
     if (role === 'teacher') {
-      this.router.navigate(['../teacher-layout']); // Navigate to the teacher module route
+      this.router.navigate(['../teacher-header']); // Navigate to the teacher module route
     } else if (role === 'admin') {
       this.router.navigate(['../admin-header']); // Navigate to the admin module route
     } else if (role === 'student') {
